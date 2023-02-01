@@ -30,7 +30,7 @@ return array(
 
 <!-- wp:column {"verticalAlignment":"center"} -->
 <div class="wp-block-column is-vertically-aligned-center"><!-- wp:image {"align":"right","id":113,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image alignright size-full"><img src="http://localhost/wp2/wp-content/uploads/2023/01/ab.jpg" alt="" class="wp-image-113"/></figure>
+<figure class="wp-block-image alignright size-full"><img src="' . esc_url( BLUR_URL . 'assets/images/').'ab.jpg" alt="" class="wp-image-113"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
