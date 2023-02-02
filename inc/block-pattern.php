@@ -60,6 +60,7 @@
 		'testimonial',
 		'pricing',
 		'primary-sidebar',
+		'sidebar-products',
 		'footer-default'
 	);
 

@@ -149,6 +149,12 @@ font-size:var(--wp--preset--font-size--tiny);
 display:none;
 }
 
+
+body:not(.home) .wp-site-blocks main {
+    padding-bottom: var(--wp--style--block-gap);
+    padding-top: var(--wp--style--block-gap);
+    margin-top: 0;
+}
 /*
  * Link Styles
  */
@@ -269,4 +275,38 @@ a:not( .wp-block-search__button, .wp-block-button__link ) {
   background: var(--wp--preset--color--accent)!important;
   color: var(--wp--preset--color--secondary)!important;
 
+}
+
+.wc-block-components-product-sort-select .wc-block-components-sort-select__select, 
+.woocommerce .woocommerce-ordering select {
+    background: transparent;
+    cursor: pointer;
+    font-size: var(--wp--preset--font-size--tiny);
+    padding: 14px;
+    min-width: 160px;
+}
+
+.woocommerce nav.woocommerce-pagination ul, .woocommerce nav.woocommerce-pagination ul li {
+    border: none;
+}
+.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current {
+    background: var(--wp--preset--color--accent);
+    color: var(--wp--preset--color--secondary);
+}
+
+.wc-block-components-pagination__page, .wc-block-components-pagination__page:not(.toggle), .woocommerce nav.woocommerce-pagination ul li a, .woocommerce nav.woocommerce-pagination ul li span {
+    color: var(--wp--preset--color--body-text);
+    line-height: 1;
+    font-size: 20px;
+    font-size: 1.25rem;
+    font-weight: 400;
+    padding: 0;
+    min-width: 1em;
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius:0;
+    margin: 0 3px;
 }
