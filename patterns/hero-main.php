@@ -20,7 +20,7 @@ return array(
 <div class="wp-block-group has-accent-background-color has-background" style="border-bottom-style:none;border-bottom-width:0px;margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"padding":{"top":"2rem","bottom":"2rem"}}}} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center" style="padding-top:2rem;padding-bottom:2rem"><!-- wp:column {"verticalAlignment":"center"} -->
 <div class="wp-block-column is-vertically-aligned-center"><!-- wp:image {"id":102,"height":436,"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"0px"}}} -->
-<figure class="wp-block-image size-full is-resized has-custom-border"><img src="http://localhost/wp2/wp-content/themes/blur/assets/images/hero-center.png" alt="blur" class="wp-image-102" style="border-radius:0px" height="436"/></figure>
+<figure class="wp-block-image size-full is-resized has-custom-border"><img src="' . esc_url( BLUR_URL . 'assets/images/').'hero-center.png" alt="blur" class="wp-image-102" style="border-radius:0px" height="436"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 

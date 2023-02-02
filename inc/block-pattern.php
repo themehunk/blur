@@ -50,16 +50,12 @@
 		'three-col-banner',
 		'recent-product',
 		'banner',
-		'top-rated',
+		'top-rated-product',
 		'aboutus',
-		'hero',
-		'hero-1',
 		'service',
 		'ribbon',
-		'team',
-		'testimonial',
-		'pricing',
 		'primary-sidebar',
+		'sidebar-products',
 		'footer-default'
 	);
 

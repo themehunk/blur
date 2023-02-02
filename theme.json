@@ -9,6 +9,11 @@
 		{
 			"area": "footer",
 			"name": "footer"
+		},
+		{
+			"name": "sidebar-products",
+			"title": "Sidebar Products",
+			"area": "uncategorized"
 		}
 	],
 	"settings": {
