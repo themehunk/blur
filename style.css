@@ -234,10 +234,10 @@ a:not(
 }
 
 /*hover style*/
-.wp-block-social-links.is-style-logos-only .wp-social-link .wp-block-social-link-anchor:hover,.wc-block-mini-cart__button:hover {
+.wp-block-social-links.is-style-logos-only .wp-social-link .wp-block-social-link-anchor:hover,
+.wc-block-mini-cart__button:hover {
 background-color: var(--wp--preset--color--accent);
 color:var(--wp--preset--color--secondary);
-
 }
 .wp-block-social-links.is-style-logos-only .wp-social-link .wp-block-social-link-anchor,.wc-block-mini-cart__button{
 border-radius:50%;

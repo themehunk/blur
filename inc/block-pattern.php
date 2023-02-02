@@ -50,7 +50,7 @@
 		'three-col-banner',
 		'recent-product',
 		'banner',
-		'top-rated',
+		'top-rated-product',
 		'aboutus',
 		'service',
 		'ribbon',
