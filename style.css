@@ -192,17 +192,15 @@ a:not(
 .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link,
 .wp-block-button.wc-block-components-product-button .wc-block-components-product-button__button,
 .woocommerce a.added_to_cart.wc-forward {
-  background: var(--wp--preset--color--secondary);
+  background: var(--wp--preset--color--accent);
   border: 1px solid var(--wp--preset--color--accent);
   border-radius: 0;
-  color: var(--wp--preset--color--accent);
+  color: var(--wp--preset--color--secondary);
   cursor: pointer;
-  font-size: var(--wp--preset--font-size--small);
-  font-weight: var(--wp--custom--typography--font-weight--bold);
-  line-height: var(--wp--custom--typography--line-height--paragraph);
+  padding:0.6rem 0.8rem;
   text-transform: uppercase;
   text-decoration: none;
-  text-align: center; }
+  text-align: center; font-weight: normal}
 
   .wc-block-components-product-sale-badge,
 .woocommerce span.onsale,
@@ -262,18 +260,25 @@ a:not( .wp-block-search__button, .wp-block-button__link ) {
 .woocommerce button.button:hover, .woocommerce button.button:focus, 
 .woocommerce input.button:hover, .woocommerce input.button:focus, 
 .woocommerce #review_form #respond .form-submit input:hover, 
+.wp-block-button .wp-block-button__link,
 .woocommerce #review_form #respond .form-submit input:focus, 
 .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link:hover, .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link:focus, .wp-block-button.wc-block-components-product-button .wc-block-components-product-button__button:hover, .wp-block-button.wc-block-components-product-button .wc-block-components-product-button__button:focus, .woocommerce a.added_to_cart.wc-forward:hover, .woocommerce a.added_to_cart.wc-forward:focus{
     border-color: transparent;
     background: var(--wp--preset--color--accent);
+    color:var(--wp--preset--color--secondary);
     opacity: 1;
 }
-.woocommerce a.button:hover, .woocommerce a.button:focus, .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link:hover, .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link:focus {
-    color: var(--wp--preset--color--secondary);
+.woocommerce a.button:hover,
+ .woocommerce a.button:focus, 
+ .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link:hover, .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link:focus {
+     color: var(--wp--preset--color--accent);
+     background: var(--wp--preset--color--secondary);
+     border:1px solid var(--wp--preset--color--accent);
 }
 .wp-block-button .wp-block-button__link:hover{
-  background: var(--wp--preset--color--accent)!important;
-  color: var(--wp--preset--color--secondary)!important;
+  background: var(--wp--preset--color--accent);
+  color: var(--wp--preset--color--secondary);
+
 
 }
 
@@ -311,7 +316,10 @@ a:not( .wp-block-search__button, .wp-block-button__link ) {
     margin: 0 3px;
 }
 
-.woocommerce #review_form #respond .form-submit input, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
+.woocommerce #review_form #respond .form-submit input, 
+.woocommerce #respond input#submit.alt, 
+.woocommerce a.button.alt, .woocommerce button.button.alt,
+ .woocommerce input.button.alt{
 
     background: var(--wp--preset--color--accent);
     color: var(--wp--preset--color--secondary);
