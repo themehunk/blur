@@ -16,8 +16,8 @@ $strings = array(
 return array(
     'title'      =>__( 'Hero Main Section', 'blur' ),
     'categories' => array( 'blur' ),
-    'content'    => '<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"},"margin":{"top":"0","bottom":"0"}},"border":{"bottom":{"width":"0px","style":"none"}}},"backgroundColor":"accent","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-accent-background-color has-background" style="border-bottom-style:none;border-bottom-width:0px;margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"padding":{"top":"2rem","bottom":"2rem"}}}} -->
+    'content'    => '<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"},"margin":{"top":"0","bottom":"0"}},"border":{"bottom":{"width":"0px","style":"none"}}},"backgroundColor":"accent","textColor":"background","layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background-color has-accent-background-color has-text-color has-background" style="border-bottom-style:none;border-bottom-width:0px;margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)"><!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"padding":{"top":"2rem","bottom":"2rem"}}}} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center" style="padding-top:2rem;padding-bottom:2rem"><!-- wp:column {"verticalAlignment":"center"} -->
 <div class="wp-block-column is-vertically-aligned-center"><!-- wp:image {"id":102,"height":436,"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"0px"}}} -->
 <figure class="wp-block-image size-full is-resized has-custom-border"><img src="' . esc_url( BLUR_URL . 'assets/images/').'hero-center.png" alt="blur" class="wp-image-102" style="border-radius:0px" height="436"/></figure>
@@ -34,8 +34,8 @@ return array(
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"right","orientation":"horizontal"},"style":{"spacing":{"blockGap":"0","margin":{"top":"35px"}}}} -->
-<div class="wp-block-buttons" style="margin-top:35px"><!-- wp:button {"backgroundColor":"background","textColor":"foreground","style":{"border":{"radius":"0px"},"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-foreground-color has-background-background-color has-text-color has-background wp-element-button" style="border-radius:0px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">SHOP NOW</a></div>
+<div class="wp-block-buttons" style="margin-top:35px"><!-- wp:button {"backgroundColor":"fourground","textColor":"primary","style":{"border":{"radius":"0px"},"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-primary-color has-fourground-background-color has-text-color has-background wp-element-button" style="border-radius:0px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">SHOP NOW</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column --></div>
