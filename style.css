@@ -497,3 +497,60 @@ input[type="date"], input[type="time"], input[type="datetime-local"], input[type
   .woocommerce-page .input-text {
     padding: 0.9rem 0.4rem 0.9rem 0.9rem;
 }
+
+.woocommerce-cart .woocommerce{
+display:flex;
+}
+
+.woocommerce-cart-form {
+    width: 65%;
+    float:left;
+}
+.woocommerce-cart .cart-collaterals {
+    width: calc(35% - 40px);
+    float: right;
+}
+.woocommerce .cart-collaterals .cart_totals, .woocommerce-page .cart-collaterals .cart_totals {
+    float: right;
+    width: 80%;
+}
+
+.woocommerce-checkout>.col2-set {
+    float: left;
+    width: 48%;
+}
+.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1 {
+    float: left;
+    width: 100%;
+}
+.woocommerce-checkout>.col2-set>.col-2 {
+    float: none;
+    width: 100%;
+}
+.woocommerce-checkout h3#order_review_heading {
+    float: right;
+    width: 45%;
+    margin-bottom: 30px;
+}
+.woocommerce-checkout #order_review {
+    float: right;
+    width: 45%;
+    border: 1px solid #cccc;
+    font-size: 15px;
+}
+
+.woocommerce table.shop_table.woocommerce-checkout-review-order-table {
+    border:0;
+    width: 100%;
+}
+
+.woocommerce form .form-row.place-order{
+margin-bottom:0;
+}
+.checkout.woocommerce-checkout{
+display:inline-block;
+}
+#add_payment_method #payment, .woocommerce-cart #payment,
+ .woocommerce-checkout #payment {
+    background: transparent;
+}

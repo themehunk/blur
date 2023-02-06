@@ -123,6 +123,11 @@
 					"slug": "fourground"
 				},
 				{
+					"color": "#ebf3ff",
+					"name": "Secbackground",
+					"slug": "secbackground"
+				},
+				{
 					"color": "#111",
 					"name": "primary",
 					"slug": "primary"
@@ -133,7 +138,7 @@
 					"slug": "secondary"
 				},
 				{
-					"color": "#fff",
+					"color": "#444",
 					"name": "tertiary",
 					"slug": "tertiary"
 				},
@@ -158,7 +163,7 @@
 		},
 		"layout": {
 			"contentSize": "800px",
-			"wideSize": "1280px"
+			"wideSize": "1170px"
 		},
 		"spacing": {
 			"units": [
