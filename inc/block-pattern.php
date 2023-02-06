@@ -53,7 +53,6 @@
 		'top-rated-product',
 		'aboutus',
 		'service',
-		'ribbon',
 		'primary-sidebar',
 		'sidebar-products',
 		'footer-default'

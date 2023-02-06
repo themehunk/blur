@@ -19,6 +19,6 @@ return array(
 <hr class="wp-block-separator has-alpha-channel-opacity" style="margin-top:2rem;margin-bottom:4rem"/>
 <!-- /wp:separator -->
 
-<!-- wp:woocommerce/product-new {"columns":4,"rows":1,"categories":[],"stockStatus":["","","instock","outofstock","onbackorder"],"align":"wide"} /--></div>
+<!-- wp:woocommerce/product-new {"columns":4,"rows":2,"categories":[],"stockStatus":["","","instock","outofstock","onbackorder"],"align":"wide"} /--></div>
 <!-- /wp:group -->',
 );

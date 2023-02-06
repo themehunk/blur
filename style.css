@@ -180,13 +180,6 @@ padding:0.6rem 1rem;
 margin:0.3rem;
 }
 
-/*woocommerce style*/
-.wc-block-mini-cart__button{
-  color: var(--wp--preset--color--accent);
-  fill: var(--wp--preset--color--accent); 
-}
-
-
 /*-------------------------------------------------------- */
 /* --- Block Woo-Commerce
 -------------------------------------------------------- */
