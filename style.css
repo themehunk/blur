@@ -214,7 +214,7 @@ font-weight:500;
 .wc-block-components-product-sale-badge,
 .woocommerce span.onsale,
 .wc-block-grid__product-onsale {
-  background-color: var(--wp--preset--color--accent);
+  background-color: var(--wp--preset--color--primary);
   color: var(--wp--preset--color--secondary);
   font-size: 0.7em;
   padding: 0.3em 0.7em;
@@ -574,7 +574,7 @@ input[type="number"], textarea,.select2-container--default .select2-selection--s
 }
 
 .woocommerce-cart .woocommerce{
-display:flex;
+    display: flow-root;
 }
 
 .woocommerce-cart-form {
@@ -658,8 +658,9 @@ font-weight:600;
 }
 .woocommerce-page .cart-collaterals h2 {
     font-size:var(--wp--preset--font-size--content-heading);
-    font-weight: 300;
-    color: #111;
+    font-weight:600;
+    text-transform: capitalize;
+    color: var(--wp--preset--color--primary);
 }
 .woocommerce-page .woocommerce-cart-form #coupon_code, .woocommerce-page .woocommerce-cart-form .actions .button{
 font-size:var(--wp--preset--font-size--tiny);
@@ -691,7 +692,7 @@ tr.cart-subtotal td  span.woocommerce-Price-amount.amount{
     font-weight: 300;
 }
 .cart_totals .shop_table .cart-subtotal th {
-    color: var(--wp--preset--color--text);
+    color: var(--wp--preset--color--tertiary);
     font-weight: 500;
 }
 .cart_totals span.woocommerce-Price-amount.amount{
@@ -936,7 +937,8 @@ width: 450px;
     text-decoration: none;
 }
 
-.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1 {
+.woocommerce-account .col2-set .col-1, 
+.woocommerce-account .col2-set .col-1 {
     float: left;
     width: 48%;
 }
@@ -944,4 +946,9 @@ width: 450px;
 .woocommerce-account .addresses .title h3 {
     float: left;
     font-weight: 500;
+}
+
+.woocommerce-error::before, .woocommerce-info::before, .woocommerce-message::before{
+    top: 2.5em;
+    left: 0.7em;
 }
