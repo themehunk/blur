@@ -12,25 +12,25 @@ return array(
     'categories' => array( 'blur' ),
     'content'    => '<!-- wp:group {"className":"wp-block-widget-area wp-block-sidebar"} -->
 <div class="wp-block-group wp-block-widget-area wp-block-sidebar"><!-- wp:group {"className":"wp-block-widget"} -->
-<div class="wp-block-group wp-block-widget"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0px","right":"0px","bottom":"20px","left":"0px"}}}} -->
-<h2 id="search-products" style="margin-top:0px;margin-right:0px;margin-bottom:20px;margin-left:0px">Search Products</h2>
+<div class="wp-block-group wp-block-widget"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0px","right":"0px","bottom":"20px","left":"0px"}},"typography":{"fontStyle":"normal","fontWeight":"500"}},"fontSize":"upper-heading"} -->
+<h2 class="has-upper-heading-font-size" id="search-products" style="margin-top:0px;margin-right:0px;margin-bottom:20px;margin-left:0px;font-style:normal;font-weight:500">Search Products</h2>
 <!-- /wp:heading -->
 
-<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search products…","buttonText":"Search","buttonUseIcon":true,"query":{"post_type":"product"},"backgroundColor":"accent"} /--></div>
+<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search products…","buttonText":"Search","buttonUseIcon":true,"query":{"post_type":"product"}} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"wp-block-widget"} -->
-<div class="wp-block-group wp-block-widget"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0px","right":"0px","bottom":"20px","left":"0px"}}}} -->
-<h2 id="categories" style="margin-top:0px;margin-right:0px;margin-bottom:20px;margin-left:0px">Categories</h2>
+<div class="wp-block-group wp-block-widget"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0px","right":"0px","bottom":"20px","left":"0px"}},"typography":{"fontStyle":"normal","fontWeight":"500"}},"fontSize":"upper-heading"} -->
+<h2 class="has-upper-heading-font-size" id="categories" style="margin-top:0px;margin-right:0px;margin-bottom:20px;margin-left:0px;font-style:normal;font-weight:500">Categories</h2>
 <!-- /wp:heading -->
 
-<!-- wp:woocommerce/product-categories {"isHierarchical":false} /--></div>
+<!-- wp:woocommerce/product-categories {"isHierarchical":false,"style":{"typography":{"lineHeight":"1.7"}},"fontSize":"extra-small"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"wp-block-widget"} -->
 <div class="wp-block-group wp-block-widget"><!-- wp:woocommerce/filter-wrapper {"filterType":"price-filter","heading":"Filter by price"} -->
-<div class="wp-block-woocommerce-filter-wrapper"><!-- wp:heading -->
-<h2>Filter by price</h2>
+<div class="wp-block-woocommerce-filter-wrapper"><!-- wp:heading {"level":3,"style":{"typography":{"fontStyle":"normal","fontWeight":"500"}},"fontSize":"upper-heading"} -->
+<h3 class="has-upper-heading-font-size" style="font-style:normal;font-weight:500">Filter by price</h3>
 <!-- /wp:heading -->
 
 <!-- wp:woocommerce/price-filter {"heading":""} -->
@@ -41,8 +41,8 @@ return array(
 
 <!-- wp:group {"className":"wp-block-widget  wp-filter-by-size"} -->
 <div class="wp-block-group wp-block-widget wp-filter-by-size"><!-- wp:woocommerce/filter-wrapper {"filterType":"attribute-filter","heading":"Filter by size"} -->
-<div class="wp-block-woocommerce-filter-wrapper"><!-- wp:heading -->
-<h2>Filter by size</h2>
+<div class="wp-block-woocommerce-filter-wrapper"><!-- wp:heading {"level":3,"style":{"typography":{"fontStyle":"normal","fontWeight":"500"}},"fontSize":"upper-heading"} -->
+<h3 class="has-upper-heading-font-size" style="font-style:normal;font-weight:500">Filter by size</h3>
 <!-- /wp:heading -->
 
 <!-- wp:woocommerce/attribute-filter {"attributeId":2,"heading":""} -->
@@ -53,8 +53,8 @@ return array(
 
 <!-- wp:group {"className":"wp-block-widget wp-filter-by-color"} -->
 <div class="wp-block-group wp-block-widget wp-filter-by-color"><!-- wp:woocommerce/filter-wrapper {"filterType":"attribute-filter","heading":"Filter by Color"} -->
-<div class="wp-block-woocommerce-filter-wrapper"><!-- wp:heading -->
-<h2>Filter by Color</h2>
+<div class="wp-block-woocommerce-filter-wrapper"><!-- wp:heading {"level":3,"style":{"typography":{"fontStyle":"normal","fontWeight":"500"}},"fontSize":"upper-heading"} -->
+<h3 class="has-upper-heading-font-size" style="font-style:normal;font-weight:500">Filter by Color</h3>
 <!-- /wp:heading -->
 
 <!-- wp:woocommerce/attribute-filter {"attributeId":1,"showCounts":false,"selectType":"single","heading":""} -->
@@ -62,6 +62,6 @@ return array(
 <!-- /wp:woocommerce/attribute-filter --></div>
 <!-- /wp:woocommerce/filter-wrapper --></div>
 <!-- /wp:group --></div>
-<!-- /wp:group --></div>
+<!-- /wp:group -->
 ',
 );
