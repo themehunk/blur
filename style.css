@@ -652,12 +652,12 @@ font-weight:600;
     padding: 10px 20px 30px 20px;
 }
 .woocommerce-page .cart-collaterals h2 {
-       font-size: 24px;
+    font-size:var(--wp--preset--font-size--content-heading);
     font-weight: 300;
     color: #111;
 }
 .woocommerce-page .woocommerce-cart-form #coupon_code, .woocommerce-page .woocommerce-cart-form .actions .button{
-font-size:12px;
+font-size:var(--wp--preset--font-size--tiny);
 height:42px
 
 }
@@ -668,7 +668,7 @@ padding:18px 0 18px 0;
 }
 
 .cart_totals .shop_table .order-total th, .cart_totals .shop_table .order-total td {
-    font-size: 18px;
+    font-size: var(--wp--preset--font-size--upper-heading);
     padding-top: 20px;
 font-weight:600;
 }
@@ -682,7 +682,7 @@ tr.cart-subtotal td, tr.order-total td {
 tr.cart-subtotal td  span.woocommerce-Price-amount.amount{
     text-align: right;
     color: var(--wp--preset--color--primary);
-    font-size: 14px;
+    font-size:var(--wp--preset--font-size--extra-small);
     font-weight: 300;
 }
 .cart_totals .shop_table .cart-subtotal th {
@@ -691,7 +691,7 @@ tr.cart-subtotal td  span.woocommerce-Price-amount.amount{
 }
 .cart_totals span.woocommerce-Price-amount.amount{
 color:var(--wp--preset--color--tertiary);
-font-size:20px;
+font-size:var(--wp--preset--font-size--content-heading);
 font-weight:500;
 }
 .woocommerce-cart .woocommerce .quantity .qty {
@@ -726,7 +726,7 @@ display:inline-block;
     display: block;
     padding: 0;
 border:0;
-font-size:14px;
+font-size:var(--wp--preset--font-size--extra-small);
 }
 .woocommerce-form-coupon-toggle .woocommerce-info {
     color: inherit;
@@ -742,10 +742,10 @@ display:none
     background-color: firebrick;
     flex-direction: column;
     align-items: flex-start;
-color:#fff
+color:var(--wp--preset--color--seconadr);
 }
 .woocommerce-error::before{
-color:#fff;
+color:var(--wp--preset--color--seconadr);
 }
 .checkout_coupon.woocommerce-form-coupon {
     border: 2px dashed #e8e8e8!important;
@@ -787,10 +787,10 @@ border:0;
 }
 .woocommerce-checkout h3#order_review_heading {
        width: 35%;
- font-size: 16px;
+ font-size: var(--wp--preset--font-size--upper-heading);
 }
 .woocommerce-billing-fields h3 {
-    font-size: 16px;
+    font-size:var(--wp--preset--font-size--upper-heading);
 }
 .woocommerce form .form-row label{
 font-size: var(--wp--preset--font-size--tiny);
@@ -851,8 +851,8 @@ tr.order-total, tr.order-total span.woocommerce-Price-amount.amount{
 }
 .woocommerce-info {
     border-top-color: #1e85be;
-    background: #000;
-    color: #fff;
+    background:var(--wp--preset--color--primary);
+    color: var(--wp--preset--color--secondary);
     font-size: var(--wp--preset--font-size--tiny);
     border: 0;
 }
