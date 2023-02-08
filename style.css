@@ -574,7 +574,7 @@ input[type="number"], textarea,.select2-container--default .select2-selection--s
 }
 
 .woocommerce-cart .woocommerce{
-display:flex;
+    display: flow-root;
 }
 
 .woocommerce-cart-form {
@@ -948,7 +948,7 @@ width: 450px;
     font-weight: 500;
 }
 
-.woocommerce-error::before{
+.woocommerce-error::before, .woocommerce-info::before, .woocommerce-message::before{
     top: 2.5em;
     left: 0.7em;
 }
