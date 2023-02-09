@@ -990,3 +990,46 @@ border:1px solid #ddd;
     background: #EBF3FF;
     padding: 2rem;
 }
+
+@media (max-width:900px){
+.woocommerce-cart-form,
+.woocommerce-checkout>.col2-set,
+.woocommerce-checkout>.col2-set>.col-2,
+.woocommerce-checkout #order_review,
+.woocommerce-checkout h3#order_review_heading {
+    width: 100%;
+    float: left;
+}
+.woocommerce-cart .cart-collaterals {
+    width: 100%;
+    float: left;
+}
+.woocommerce-account .woocommerce-MyAccount-navigation {
+    float: left;
+    width: 30%;
+}
+.woocommerce-account .woocommerce-MyAccount-content {
+    float: right;
+    width: 65%;
+}
+.woocommerce-account .woocommerce-MyAccount-navigation {
+    padding: 0px 10px;
+  }
+ .woocommerce-account .woocommerce-MyAccount-navigation ul {
+    margin: 1rem;
+    padding: 0;
+ } 
+
+}
+
+@media (max-width: 781px){
+.blur-theme-col.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column {
+    flex-basis: min-content!important;
+}
+}
+
+@media (max-width: 767px){
+.blur-theme-col.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column {
+    flex-basis:100%!important;
+}
+}
