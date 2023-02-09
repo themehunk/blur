@@ -11,8 +11,8 @@ return array(
     'title'      =>__( 'Service Section', 'blur' ),
     'categories' => array( 'blur' ),
     'content'    => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"4rem","right":"0rem","bottom":"4rem","left":"0rem"}}},"backgroundColor":"background","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-background-background-color has-background" style="padding-top:4rem;padding-right:0rem;padding-bottom:4rem;padding-left:0rem"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|50"}}}} -->
-<div class="wp-block-columns alignwide"><!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|40","padding":{"bottom":"var:preset|spacing|30"}}}} -->
+<div class="wp-block-group alignfull has-background-background-color has-background" style="padding-top:4rem;padding-right:0rem;padding-bottom:4rem;padding-left:0rem"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|50"}}},"className":"blur-theme-col"} -->
+<div class="wp-block-columns alignwide blur-theme-col"><!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|40","padding":{"bottom":"var:preset|spacing|30"}}}} -->
 <div class="wp-block-column" style="padding-bottom:var(--wp--preset--spacing--30)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"border":{"right":{"width":"0px","style":"none"}},"spacing":{"padding":{"right":"var:preset|spacing|50"}}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group" style="border-right-style:none;border-right-width:0px;padding-right:var(--wp--preset--spacing--50)"><!-- wp:image {"id":734,"sizeSlug":"full","linkDestination":"none"} -->
