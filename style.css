@@ -368,10 +368,14 @@ a:not( .wp-block-search__button, .wp-block-button__link ) {
 .product_meta {
     font-size: var(--wp--preset--font-size--tiny);
 }
-.woocommerce div.product section.related.products {
+.woocommerce div.product section.related.products,
+.woocommerce div.product section.upsells.products {
     text-align: center;
+    margin-top:2rem;
 }
-.woocommerce div.product .woocommerce-tabs ul.tabs li a, .woocommerce-Tabs-panel h2, .related.products > h2 {
+.woocommerce div.product .woocommerce-tabs ul.tabs li a,
+.woocommerce-Tabs-panel h2, .related.products > h2,
+.up-sells.upsells.products h2 {
     font-weight: 500;
 }
 /*single product page*/
@@ -424,7 +428,7 @@ color: var(--wp--preset--color--accent); }
   box-shadow: none; }
 
 .woocommerce-Tabs-panel h2,
-.related.products > h2 {
+.related.products > h2,.up-sells.upsells.products h2{
   font-size: var(--wp--custom--typography--font-size--heading-five);
   margin-bottom: 28px; }
 
@@ -584,6 +588,10 @@ input[type="number"], textarea,.select2-container--default .select2-selection--s
 .woocommerce-cart .cart-collaterals {
     width: calc(35% - 40px);
     float: right;
+}
+.woocommerce .cart-collaterals .cross-sells, .woocommerce-page .cart-collaterals .cross-sells {
+ width:100%;
+    float: left;
 }
 .woocommerce .cart-collaterals .cart_totals, .woocommerce-page .cart-collaterals .cart_totals {
     float: right;
@@ -951,4 +959,34 @@ width: 450px;
 .woocommerce-error::before, .woocommerce-info::before, .woocommerce-message::before{
     top: 2.5em;
     left: 0.7em;
+}
+
+.woocommerce-order-received section.woocommerce-order-details{
+    width: 48%;
+    float: left;
+}
+.woocommerce-order-received section.woocommerce-customer-details{
+ width: 48%;
+    float:right;
+}
+
+.woocommerce-order-received .woocommerce-order{
+display: flow-root;
+}
+
+.woocommerce-order-received .woocommerce-table.woocommerce-table--order-details{
+border:1px solid #ddd;
+}
+
+.woocommerce-page h2.woocommerce-order-details__title{
+    font-size: var(--wp--preset--font-size--large);
+    font-weight: 300;
+}
+.woocommerce-order-received  ul.woocommerce-order-overview {
+    display: flex;
+    width: 100%;
+    padding-left: 0;
+    font-size: var(--wp--preset--font-size--small);
+    background: #EBF3FF;
+    padding: 2rem;
 }
