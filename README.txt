@@ -3,7 +3,7 @@ Contributors: themehunk
 Tags: full-site-editing, block-patterns, one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks
 Requires at least: 6.0
 Tested up to: 6.1
-Stable tag: 1.0.2
+Stable tag: 1.0.0
 Requires PHP: 5.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -21,13 +21,7 @@ Demo: https://themehunk.com/Blur/
 
 == Changelog ==
 
-= 1.0.2 =
-* Skip link Issue Fixed.
-* Screenshot Issue Fixed.
-* Content Underline Issue Fixed.
-
-= 1.0.1 =
-* Issue Fixed
+= 1.0.0 =
 
 Initial release.
 
@@ -39,6 +33,12 @@ Version 1.0.0
 License for images:
 == Screenshots ==
 https://pxhere.com/en/photo/905509
+https://negativespace.co/woman-beach-style/
+https://negativespace.co/city-model-woman/
+https://negativespace.co/woman-feet-yellow-shoes/
+https://negativespace.co/jeans-sunglasses-fashion/
+https://negativespace.co/woman-beach-fashion/
+https://negativespace.co/woman-heels-feet/
 
 == Poppins Font ==
 License: SIL Open Font License (OFL) 1.1
