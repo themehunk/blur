@@ -26,11 +26,11 @@ return array(
 
 <!-- wp:group {"style":{"spacing":{"padding":{"left":"var:preset|spacing|40"}}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group" style="padding-left:var(--wp--preset--spacing--40)"><!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"500","lineHeight":"1.1"},"spacing":{"padding":{"top":"0"}}},"textColor":"primary","fontSize":"upper-heading"} -->
-<h2 class="has-primary-color has-text-color has-upper-heading-font-size" style="padding-top:0;font-style:normal;font-weight:500;line-height:1.1">Free Shipping<br></h2>
+<h2 class="has-primary-color has-text-color has-upper-heading-font-size" style="padding-top:0;font-style:normal;font-weight:500;line-height:1.1">'.esc_html__('Free Shipping','blur').'<br></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"tertiary"} -->
-<p class="has-text-align-center has-tertiary-color has-text-color">From $350</p>
+<p class="has-text-align-center has-tertiary-color has-text-color">'.esc_html__('From $350','blur').'</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -50,11 +50,11 @@ return array(
 
 <!-- wp:group {"style":{"spacing":{"padding":{"left":"var:preset|spacing|40"}}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group" style="padding-left:var(--wp--preset--spacing--40)"><!-- wp:heading {"textAlign":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"500","lineHeight":"1.1"},"spacing":{"padding":{"top":"0"}}},"textColor":"primary","fontSize":"upper-heading"} -->
-<h2 class="has-text-align-center has-primary-color has-text-color has-upper-heading-font-size" style="padding-top:0;font-style:normal;font-weight:500;line-height:1.1">Money Guarantee<br></h2>
+<h2 class="has-text-align-center has-primary-color has-text-color has-upper-heading-font-size" style="padding-top:0;font-style:normal;font-weight:500;line-height:1.1">'.esc_html__('Money Guarantee','blur').'<br></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"tertiary"} -->
-<p class="has-text-align-center has-tertiary-color has-text-color">30 Days Back</p>
+<p class="has-text-align-center has-tertiary-color has-text-color">'.esc_html__('30 Days Back','blur').'</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -74,11 +74,11 @@ return array(
 
 <!-- wp:group {"style":{"spacing":{"padding":{"left":"var:preset|spacing|40"}}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group" style="padding-left:var(--wp--preset--spacing--40)"><!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"500","lineHeight":"1.1"},"spacing":{"padding":{"top":"0"}}},"textColor":"primary","fontSize":"upper-heading"} -->
-<h2 class="has-primary-color has-text-color has-upper-heading-font-size" style="padding-top:0;font-style:normal;font-weight:500;line-height:1.1">Payment Method<br></h2>
+<h2 class="has-primary-color has-text-color has-upper-heading-font-size" style="padding-top:0;font-style:normal;font-weight:500;line-height:1.1">'.esc_html__('Payment Method','blur').'<br></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"tertiary"} -->
-<p class="has-tertiary-color has-text-color">Secure Payment</p>
+<p class="has-tertiary-color has-text-color">'.esc_html__('Secure Payment','blur').'</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -98,11 +98,11 @@ return array(
 
 <!-- wp:group {"style":{"spacing":{"padding":{"left":"var:preset|spacing|40"}}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group" style="padding-left:var(--wp--preset--spacing--40)"><!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"500","lineHeight":"1.1"},"spacing":{"padding":{"top":"0"}}},"textColor":"primary","fontSize":"upper-heading"} -->
-<h2 class="has-primary-color has-text-color has-upper-heading-font-size" style="padding-top:0;font-style:normal;font-weight:500;line-height:1.1">Support 24x7<br></h2>
+<h2 class="has-primary-color has-text-color has-upper-heading-font-size" style="padding-top:0;font-style:normal;font-weight:500;line-height:1.1">'.esc_html__('Support 24x7','blur').'<br></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"tertiary"} -->
-<p class="has-tertiary-color has-text-color">Black Bread</p>
+<p class="has-tertiary-color has-text-color">'.esc_html__('Black Bread','blur').'</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

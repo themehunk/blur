@@ -6,12 +6,6 @@
  * title: Hero main Section
  * categories: blur
  */
-$strings = array(
-    'title'    => __( 'blur Theme', 'blur' ),
-    'subtitle'    => __( 'OPPURTUNITIES ARE WAITING FOR YOU', 'blur' ),
-    'description' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ut labore et dolore magna aliqua.', 'blur' ),
-    'button'   => __( 'Learn More', 'blur' ),
-);
 
 return array(
     'title'      =>__( 'Hero Main Section', 'blur' ),
@@ -26,15 +20,15 @@ return array(
 
 <!-- wp:column {"verticalAlignment":"center","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|60"}}}} -->
 <div class="wp-block-column is-vertically-aligned-center" style="padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:paragraph {"align":"left","textColor":"accent","fontSize":"medium"} -->
-<p class="has-text-align-left has-accent-color has-text-color has-medium-font-size">Spring is coming, so take a look.</p>
+<p class="has-text-align-left has-accent-color has-text-color has-medium-font-size">'.esc_html__('Spring is coming, so take a look.','blur').'</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"textAlign":"left","style":{"typography":{"fontStyle":"normal","fontWeight":"700","fontSize":"3rem"},"elements":{"link":{"color":{"text":"accent"}}}},"textColor":"primary"} -->
-<h2 class="has-text-align-left has-primary-color has-text-color has-link-color" style="font-size:3rem;font-style:normal;font-weight:700">Womens Collection</h2>
+<h2 class="has-text-align-left has-primary-color has-text-color has-link-color" style="font-size:3rem;font-style:normal;font-weight:700">'.esc_html__('Womens Collection','blur').'</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"tertiary"} -->
-<p class="has-tertiary-color has-text-color">Venenatis urna cursus eget nunc scelerisque viverra mauris. Vel pretium lectus quam id leo in vitae. Eleifend mi in nulla posuere sollicitudin.&nbsp;</p>
+<p class="has-tertiary-color has-text-color">'.esc_html__('Venenatis urna cursus eget nunc scelerisque viverra mauris. Vel pretium lectus quam id leo in vitae. Eleifend mi in nulla posuere sollicitudin','blur').'</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left","orientation":"horizontal"},"style":{"spacing":{"blockGap":"var:preset|spacing|50","margin":{"top":"35px"}}}} -->
