@@ -24,7 +24,7 @@ return array(
 <p class="has-text-align-center has-background-color has-text-color has-upper-heading-font-size">'.esc_html__('Bags, Shoes and womens wear','blur').'</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:separator {"style":{"spacing":{"margin":{"top":"2rem","bottom":"2rem"}}}} -->
+<!-- wp:separator {"style":{"spacing":{"margin":{"top":"2rem","bottom":"2rem"}}},"backgroundColor":"secondary"} -->
 <hr class="wp-block-separator has-alpha-channel-opacity" style="margin-top:2rem;margin-bottom:2rem"/>
 <!-- /wp:separator -->
 

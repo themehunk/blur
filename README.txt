@@ -1,6 +1,6 @@
 === Blur ===
 Contributors: themehunk
-Tags: full-site-editing, block-patterns, one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks
+Tags: Block Editor Patterns, Block Editor Styles, WooCommerce, Custom Background, Custom Logo, Custom Menu, Featured Images, Full Site Editing, E-Commerce, Blog, Footer Widgets, Left Sidebar, One Column, Two Columns, Translation Ready, Wide Blocks, Right Sidebar, Threaded Comments
 Requires at least: 6.0
 Tested up to: 6.1
 Stable tag: 1.0.0
@@ -12,7 +12,8 @@ Blur is an easy-to-use, multi-purpose Full Site Editing WordPress theme.
 
 == Description ==
 
-Blur is a Fast & lightweight Block Based Full Site Editing WordPress Theme. With FSE, users can create custom templates for different pages or sections of the site, as well as use widgets and other design elements to control the appearance and layout of the site. We believe it will revolutionize the way you create and customize your WordPress site. With Blur you’ll have access to a range of pre-designed templates and custom block patterns, making it easy to create stunning pages and posts without any coding knowledge.
+Blur is a Free, Fast & lightweight Block Based Full Site Editing Multipurpose eCommerce Theme for WooCommerce. This theme is specially designed for creating online stores or shopping websites. With the freedom of Full Site Editing, You can create a beautiful Shopping website with a fast and smooth experience for visitors. This FSE WooCommerce Theme is Fully Functional, Customizable, and Mobile Friendly. It comes with Multiple Block Patterns and Templates for creating any type of Online Store website. Also, users can create custom templates for different pages or sections of the site, as well as use widgets and other design elements to control the appearance and layout of the site. Download Blur Theme today and start building a stunning eCommerce store website for free.
+https://wpthemes.themehunk.com/blur/
 
 Support: https://themehunk.com/contact/ 
 Demo: https://themehunk.com/Blur/

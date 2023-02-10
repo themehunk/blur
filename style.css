@@ -3,7 +3,7 @@ Theme Name: Blur
 Theme URI: https://themehunk.com/Blur/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
-Description: Blur is a Fast & lightweight Block Based Full Site Editing WordPress Theme. With FSE, users can create custom templates for different pages or sections of the site, as well as use widgets and other design elements to control the appearance and layout of the site. We believe it will revolutionize the way you create and customize your WordPress site. With Blur you’ll have access to a range of pre-designed templates and custom block patterns, making it easy to create stunning pages and posts without any coding knowledge.
+Description: Blur is a Free, Fast & lightweight Block Based Full Site Editing Multipurpose eCommerce Theme for WooCommerce. This theme is specially designed for creating online stores or shopping websites. With the freedom of Full Site Editing, You can create a beautiful Shopping website with a fast and smooth experience for visitors. This FSE WooCommerce Theme is Fully Functional, Customizable, and Mobile Friendly. It comes with Multiple Block Patterns and Templates for creating any type of Online Store website. Also, users can create custom templates for different pages or sections of the site, as well as use widgets and other design elements to control the appearance and layout of the site. Download Blur Theme today and start building a stunning eCommerce store website for free. https://wpthemes.themehunk.com/blur/
 Version: 1.0.0
 Requires at least: 6.0
 Tested up to: 6.1
@@ -12,8 +12,8 @@ License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 WordPress Available:  yes
 Requires License:     no
-Text Domain: Blur
-Tags: full-site-editing, block-patterns, one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks
+Text Domain: blur
+Tags: Block Editor Patterns, Block Editor Styles, WooCommerce, Custom Background, Custom Logo, Custom Menu, Featured Images, Full Site Editing, E-Commerce, Blog, Footer Widgets, Left Sidebar, One Column, Two Columns, Translation Ready, Wide Blocks, Right Sidebar, Threaded Comments
 */
 
 /*
@@ -991,6 +991,29 @@ border:1px solid #ddd;
     padding: 2rem;
 }
 
+/*mini cart style*/
+
+h2.wc-block-mini-cart__title {
+    font-size: 1em;
+    margin: 40px 16px 0;
+    font-weight: normal;
+}
+.wc-block-components-product-badge {
+    
+    font-size: .65em;
+    font-weight: 600;
+    padding: 0.2rem 1em;
+    background:var(--wp--preset--color--primary);
+    color:var(--wp--preset--color--secondary);
+}
+.is-mobile table.wc-block-cart-items .wc-block-cart-items__row .wc-block-cart-item__quantity {
+    padding-top: 7px;
+    display: flex;
+}
+.wc-block-cart-item__remove-link{
+margin-left:0.5rem!important;
+cursor: pointer;
+}
 @media (max-width:900px){
 .woocommerce-cart-form,
 .woocommerce-checkout>.col2-set,
