@@ -1056,3 +1056,13 @@ cursor: pointer;
     flex-basis:100%!important;
 }
 }
+
+@media screen and (max-width: 600px){
+.wp-block-navigation__submenu-container{
+    padding-top: 0.7rem!important;
+    padding-bottom: 0.5rem!important;
+}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__container{
+    gap: 9px!important;
+}
+}
