@@ -1,0 +1,112 @@
+.th-option-area {
+    margin: 25px 0px 50px 0px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: #f8faff;
+    border-radius: 2px;
+    border: 1px solid #f4f2f2;
+    box-shadow: 0px 0px 4px 0px #dcf5ff;
+    box-shadow: 2px 2px 3px 0px #e4e4e6;
+}
+.th-option-top-hdr{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.th-option-top-hdr {
+    border-bottom: 1px solid #e2e8f5;
+    margin-bottom: 10px;
+}
+.th-option-top-hdr .th-col1 {
+    width: 100px;
+    padding: 1rem;
+}
+.th-option-top-hdr .th-col1 .logo-image{
+display: block;
+}
+
+.th-option-top-hdr .th-col2 {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+.th-option-top-hdr .th-col1 img{
+max-width:100%;
+}
+
+.th-option-heading h2 {
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 10px;
+}
+
+.th-option-heading p {
+    position: relative;
+    font-size: 15px;
+}
+
+.th-option-detail{
+   margin-left: 100px;
+    display: flex;
+    align-items: center;
+}
+.th-option-detail p {
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+}
+.th-option-area .th-version:after {
+    border: 1px solid #999;
+    content: " ";
+    margin: 0 9px;
+}
+.th-option-area span {
+    color: #f98a17;
+    font-weight: 700;
+
+}
+.appearance_page_blur_thunk_started #wpcontent{
+    padding:0;
+    background:#fff;
+    }
+    
+    #blur-theme-setting-page{
+    padding:1rem;
+    }
+    
+    .blur-theme-options-main{
+        width: 100%;
+        display: flex;
+    }
+    
+    .option-tab-content-wrap {
+        width: 70%;
+        padding: 1rem;
+        box-shadow: 0px 0px 10px 0px #d0eaf5;
+    }
+    
+    .option-sidebar-wrap {
+        width: 25%;
+        margin-left:3rem;
+        padding: 1rem;
+    box-shadow: 0px 0px 10px 0px #d0eaf5;
+    }
+    
+    
+    .blur-tabs button {
+        padding: 20px;
+        color: #111;
+        font-size:1rem;
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+        text-decoration: none;
+         border:0;
+         background:none;
+    }
+    
+    .blur-tabs button.active {
+        color: #228add;
+    }    
