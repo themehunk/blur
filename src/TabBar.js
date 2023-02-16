@@ -39,6 +39,7 @@ const TabBar = () => {
       <input
               type="text"
               id="activetab"
+              name="activetab"
               value={activeTab}
               
             />

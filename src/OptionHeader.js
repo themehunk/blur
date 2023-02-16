@@ -1,5 +1,4 @@
 import {Fragment} from '@wordpress/element';
-import TabBar from './TabBar';
 
 const OptionHeader = () => {
     return (
@@ -28,9 +27,7 @@ const OptionHeader = () => {
               </div>
             </div>
 
-            <div className="th-option-bottom-hdr">
-                <TabBar/>
-            </div>
+            
           </div>
         </div>
         </Fragment>

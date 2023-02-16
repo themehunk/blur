@@ -1,9 +1,9 @@
 .th-option-area {
-    margin: 25px 0px 50px 0px;
+    margin: 25px 0px 25px 0px;
     display: flex;
     flex-direction: column;
     position: relative;
-    background: #f8faff;
+    background: #2c3e6e;
     border-radius: 2px;
     border: 1px solid #f4f2f2;
     box-shadow: 0px 0px 4px 0px #dcf5ff;
@@ -14,10 +14,7 @@
     align-items: center;
     position: relative;
 }
-.th-option-top-hdr {
-    border-bottom: 1px solid #e2e8f5;
-    margin-bottom: 10px;
-}
+
 .th-option-top-hdr .th-col1 {
     width: 100px;
     padding: 1rem;
@@ -39,11 +36,13 @@ max-width:100%;
     font-size: 21px;
     font-weight: bold;
     line-height: 10px;
+    color: #fff;
 }
 
 .th-option-heading p {
     position: relative;
     font-size: 15px;
+    color:#d7d5d5;
 }
 
 .th-option-detail{
@@ -56,6 +55,7 @@ max-width:100%;
     font-weight: bold;
     font-size: 20px;
     position: relative;
+    color: #d7d5d5;
 }
 .th-option-area .th-version:after {
     border: 1px solid #999;
@@ -83,30 +83,78 @@ max-width:100%;
     
     .option-tab-content-wrap {
         width: 70%;
-        padding: 1rem;
-        box-shadow: 0px 0px 10px 0px #d0eaf5;
+        box-shadow: 0px 0px 4px 0px #dcf5ff;
     }
     
     .option-sidebar-wrap {
         width: 25%;
         margin-left:3rem;
-        padding: 1rem;
-    box-shadow: 0px 0px 10px 0px #d0eaf5;
+        padding: 1.3rem;
+        box-shadow: 0px 0px 4px 0px #dcf5ff;
+        background:#f8faff;
     }
-    
-    
+    .option-sidebar-wrap p {
+        font-weight: 400;
+        line-height: 1.6;
+        font-size:0.90rem;
+    }
+    .option-sidebar-wrap h3 {
+        color: #111;
+        font-size: 1.3em;
+        margin: 1em 0;
+    }
     .blur-tabs button {
-        padding: 20px;
+        padding: 1rem 1.5rem;
         color: #111;
         font-size:1rem;
         font-weight: bold;
         cursor: pointer;
         position: relative;
         text-decoration: none;
+        background: #f8faff;
          border:0;
-         background:none;
+    }
+
+    .blur-tabs{
+        background: #f8faff;
     }
     
     .blur-tabs button.active {
-        color: #228add;
-    }    
+        color: #fff;
+        background: #225992;
+    }  
+
+    .blur-options-tab .tab-content{
+        padding:1rem;
+    }
+
+    .option-content-wrp {
+        margin-top:1.5rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 815px;
+    }
+    .option-content-wrp {
+        display: flex;
+    flex-wrap: wrap;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1.5rem;
+    }
+    
+    .option-content-wrp .content-box {
+        background: #fff;
+        width: 48.5%;
+        padding: 1.3rem;
+        box-sizing: border-box;
+        box-shadow: 0px 0px 4px 0px #dcf5ff;
+    }
+    .option-content-wrp .content-box h3{
+        font-size: 1.1rem;
+    }
+    .option-content-wrp .content-box p{
+        line-height: 1.5;
+        font-size: 1rem;
+    }
+    .sidebar-option-content-wrp hr {
+        margin: 1.5rem 0;
+    } 

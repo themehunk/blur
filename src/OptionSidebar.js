@@ -1,10 +1,11 @@
 import {Fragment} from '@wordpress/element';
+import SidebarContent from './SidebarContent';
 
 const OptionSidebar = () => {
     return (
         <Fragment>
             <div className="blur-theme-sidebar-contnet">
-               <h1>sidebar conentnt</h1>
+               <SidebarContent/>
             </div>
         </Fragment>
     );
