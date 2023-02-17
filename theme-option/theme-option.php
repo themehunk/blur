@@ -22,6 +22,8 @@ class Blur_theme_option{
 
     add_action('admin_enqueue_scripts', array($this, 'blur_enqueue_scripts'));
     add_action('admin_menu', array($this, 'blur_register_settings_menu'),99);
+
+    
       
     }
 
@@ -48,7 +50,7 @@ class Blur_theme_option{
     <?php
 
   }
-
+  
 
 }
 

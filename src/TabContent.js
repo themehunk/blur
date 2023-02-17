@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { __ } from '@wordpress/i18n';
 import WelcomeContent from './WelcomeContent';
+import HelpContent from './HelpContent';
+import RecommendedContent from './RecommendedContent';
 
 const TabContent = (props) => {
     const [settings, setSettings] = useState({});
@@ -50,8 +52,7 @@ const TabContent = (props) => {
         )}
         {activeTab === 'recommended' && (
           <div className="recommended-tab">
-            <h2>Recommended Options</h2>
-            
+            <RecommendedContent/>
           </div>
         )}
         {activeTab === 'demo' && (
@@ -68,7 +69,7 @@ const TabContent = (props) => {
         )}
         {activeTab === 'help' && (
           <div className="help-tab">
-            <h2>Help</h2>
+           <HelpContent/>
             
           </div>
         )}
