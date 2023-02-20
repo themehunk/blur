@@ -1,6 +1,6 @@
 === Blur ===
 Contributors: themehunk
-Tags: Block Editor Patterns, Block Editor Styles, WooCommerce, Custom Background, Custom Logo, Custom Menu, Featured Images, Full Site Editing, E-Commerce, Blog, Footer Widgets, Left Sidebar, One Column, Two Columns, Translation Ready, Wide Blocks, Right Sidebar, Threaded Comments
+Tags: grid-layout, one-column, wide-blocks, block-patterns, block-styles, custom-menu, editor-style, full-site-editing, full-width-template, style-variations, template-editing, translation-ready, e-commerce
 Requires at least: 6.0
 Tested up to: 6.1
 Stable tag: 1.0.0
