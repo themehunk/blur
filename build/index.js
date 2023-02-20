@@ -176,11 +176,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function PluginData() {
-  const [data, setData] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
+  const [customData, setCustomData] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null);
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
-    fetch('https://api.wordpress.org/plugins/info/1.0/th-advance-product-search.json').then(response => response.json()).then(data => setData(data));
+    fetch('/wp-json/my-plugin/v1/custom-data/').then(response => response.json()).then(data => {
+      setCustomData(data);
+    });
   }, []);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", null, "My Plugin Data"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", null, console.log(data)));
+  if (!customData) {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, "Loading...");
+  }
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, customData.title), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: customData.image_url,
+    alt: "Custom Image"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, customData.description));
 }
 /* harmony default export */ __webpack_exports__["default"] = (PluginData);
 

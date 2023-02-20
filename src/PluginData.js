@@ -1,20 +1,25 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function PluginData() {
-  const [data, setData] = useState([]);
+  const [customData, setCustomData] = useState(null);
 
   useEffect(() => {
-    fetch('https://api.wordpress.org/plugins/info/1.0/th-advance-product-search.json')
+    fetch('/wp-json/my-plugin/v1/custom-data/')
       .then(response => response.json())
-      .then(data => setData(data));
+      .then(data => {
+        setCustomData(data);
+      });
   }, []);
+
+  if (!customData) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
-      <h1>My Plugin Data</h1>
-      <ul>
-        {console.log(data) }
-      </ul>
+      <h2>{customData.title}</h2>
+      <img src={customData.image_url} alt="Custom Image" />
+      <p>{customData.description}</p>
     </div>
   );
 }
