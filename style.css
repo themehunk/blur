@@ -4,7 +4,7 @@ Theme URI: https://themehunk.com/Blur/
 Author: ThemeHunk
 Author URI: https://www.themehunk.com
 Description: Blur is a Free, Fast & lightweight Block Based Full Site Editing Multipurpose eCommerce Theme for WooCommerce. This theme is specially designed for creating online stores or shopping websites. With the freedom of Full Site Editing, You can create a beautiful Shopping website with a fast and smooth experience for visitors. This FSE WooCommerce Theme is Fully Functional, Customizable, and Mobile Friendly. It comes with Multiple Block Patterns and Templates for creating any type of Online Store website. Also, users can create custom templates for different pages or sections of the site, as well as use widgets and other design elements to control the appearance and layout of the site. Download Blur Theme today and start building a stunning eCommerce store website for free. https://wpthemes.themehunk.com/blur/
-Version: 1.0.0
+Version: 1.0.3
 Requires at least: 6.0
 Tested up to: 6.1
 Requires PHP: 5.6
@@ -160,20 +160,8 @@ body:not(.home) .wp-site-blocks main {
     padding-top: var(--wp--style--block-gap);
     margin-top: 0;
 }
-/*
- * Link Styles
- */
-
-a:not(
-  .wp-block-search__button,
-  .wp-block-button__link
-) {
-  text-underline-offset: .1rem;
-}
-
-a:not( .wp-block-search__button, .wp-block-button__link ):focus {
-    text-decoration: none;
-    text-decoration-style: initial;
+.entry-content a{
+  text-decoration:underline;
 }
 .wp-block-query-pagination a.wp-block-query-pagination-previous,.wp-block-query-pagination a.wp-block-query-pagination-next{
 color:var(--wp--preset--color--secondary);
@@ -260,9 +248,8 @@ a, .content > .video-play:hover span, .content > .video-play svg, a svg.icon, .w
     width: auto;
     height: auto;
 }
-a:not( .wp-block-search__button, .wp-block-button__link ) {
-    text-underline-offset: 0;
-    text-decoration: none;
+.wc-block-grid__product a{
+  text-decoration: none;
 }
 
 .woocommerce #respond input#submit:hover, 
