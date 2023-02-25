@@ -18,8 +18,6 @@ function PluginData() {
       });
   }, []);
 
-  console.log({data});
-
   if (!data) {
     return <div>Loading...</div>;
   }

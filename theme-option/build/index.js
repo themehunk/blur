@@ -188,9 +188,6 @@ function PluginData() {
       setData(data);
     });
   }, []);
-  console.log({
-    data
-  });
   if (!data) {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, "Loading...");
   }
