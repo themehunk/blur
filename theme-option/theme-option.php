@@ -22,8 +22,6 @@ class Blur_theme_option{
 
     add_action('admin_enqueue_scripts', array($this, 'blur_enqueue_scripts'));
     add_action('admin_menu', array($this, 'blur_register_settings_menu'),99);
-
-    
       
     }
 
@@ -37,9 +35,9 @@ class Blur_theme_option{
    
    function blur_enqueue_scripts() {
 
-    wp_enqueue_style( 'blur-settings-css', get_template_directory_uri() . '/build/style-index.css', array(), '1.0.0', false );
+    wp_enqueue_style( 'blur-settings-css', get_template_directory_uri() . '/theme-option/build/style-index.css', array(), '1.0.0', false );
 
-    wp_enqueue_script( 'blur-settings-js', get_template_directory_uri() . '/build/index.js', array( 'wp-element', 'wp-i18n' ), '1.0', true );
+    wp_enqueue_script( 'blur-settings-js', get_template_directory_uri() . '/theme-option/build/index.js', array( 'wp-element', 'wp-i18n' ), '1.0', true );
 
    }
 
@@ -55,3 +53,23 @@ class Blur_theme_option{
 }
 
 $obj = new Blur_theme_option();
+
+
+
+add_action( 'rest_api_init', function () {
+    register_rest_route( 'wp1/blur/', 'avd', array(
+        'methods' => 'POST',
+        'callback' => 'my_custom_endpoint_callback',
+    ) );
+} );
+
+function my_custom_endpoint_callback() {
+    $data = array(
+        'title' => 'My Custom Title',
+        'description' => 'This is my custom description.',
+        'image_url' => 'https://example.com/images/my-custom-image.jpg',
+    );
+
+    return register_rest_route($data);
+
+}
