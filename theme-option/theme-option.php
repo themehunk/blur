@@ -54,6 +54,15 @@ class Blur_theme_option{
 
 $obj = new Blur_theme_option();
 
+
+
+add_action( 'rest_api_init', function () {
+    register_rest_route( 'wp1/blur/', 'avd', array(
+        'methods' => 'POST',
+        'callback' => 'my_custom_endpoint_callback',
+    ) );
+} );
+
 function my_custom_endpoint_callback() {
     $data = array(
         'title' => 'My Custom Title',
@@ -61,13 +70,6 @@ function my_custom_endpoint_callback() {
         'image_url' => 'https://example.com/images/my-custom-image.jpg',
     );
 
-    return rest_ensure_response( $data );
+    return register_rest_route($data);
 
 }
-
-add_action( 'rest_api_init', function () {
-    register_rest_route( 'my-plugin/v1', '/custom-data/', array(
-        'methods' => 'GET',
-        'callback' => 'my_custom_endpoint_callback',
-    ) );
-} );

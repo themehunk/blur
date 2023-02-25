@@ -4,7 +4,7 @@ function PluginData() {
   const [customData, setCustomData] = useState(null);
 
   useEffect(() => {
-    fetch('/wp-json/my-plugin/v1/custom-data/')
+    fetch('/wp1/wp-json/blur/avd/')
       .then(response => response.json())
       .then(data => {
         setCustomData(data);

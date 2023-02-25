@@ -178,7 +178,7 @@ __webpack_require__.r(__webpack_exports__);
 function PluginData() {
   const [customData, setCustomData] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null);
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
-    fetch('/wp-json/my-plugin/v1/custom-data/').then(response => response.json()).then(data => {
+    fetch('/wp1/wp-json/blur/avd/').then(response => response.json()).then(data => {
       setCustomData(data);
     });
   }, []);
