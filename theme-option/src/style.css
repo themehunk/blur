@@ -141,7 +141,7 @@ max-width:100%;
     grid-row-gap: 1.5rem;
     }
     
-    .option-content-wrp .content-box {
+    .tab-content .content-box {
         background: #fff;
         width: 48.5%;
         padding: 1.3rem;
@@ -158,3 +158,25 @@ max-width:100%;
     .sidebar-option-content-wrp hr {
         margin: 1.5rem 0;
     } 
+    .th-option-2-col{
+        display: flex;
+        flex-wrap: wrap;
+        grid-column-gap: 20px;
+        grid-row-gap: 45px;
+
+    }
+
+    .th-option-row {
+        display: flex;
+    }
+    .th-col{
+        flex: 50%;
+    }
+    .title-plugin h4 {
+        font-size: 16px;
+        margin: 15px 0;
+    }
+
+    .title-plugin{
+    margin-bottom:1rem;
+    }
