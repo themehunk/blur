@@ -173,22 +173,70 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+
+
 
 
 function PluginData() {
-  const [customData, setCustomData] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null);
+  const [data, setData] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null);
+  const homeUrl = wpapi.homeUrl;
+  const Url = `${homeUrl}/wp-json/wp/v1/blur`;
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
-    fetch('/wp1/wp-json/blur/avd/').then(response => response.json()).then(data => {
-      setCustomData(data);
+    fetch(`${Url}`).then(response => response.json()).then(data => {
+      setData(data);
     });
   }, []);
-  if (!customData) {
+  console.log({
+    data
+  });
+  if (!data) {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, "Loading...");
   }
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, customData.title), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: customData.image_url,
-    alt: "Custom Image"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, customData.description));
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "recommended-option-wrap"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "th-option-2-col"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "th-option-row content-box"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "th-col"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: data.hunkcompanion.imgUrl
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "th-col"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "title-plugin"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, data.hunkcompanion.name), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    className: "plugin-detail thickbox open-plugin-details-modal",
+    href: data.hunkcompanion.detail_link
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Details &amp; Version', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    "data-activated": "Activated",
+    "data-msg": "Activating",
+    "data-init": data.hunkcompanion.active_filename,
+    "data-slug": data.hunkcompanion.slug,
+    className: `button install-now button ${data.hunkcompanion.slug}`
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Install Now', 'blur')))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "th-option-row content-box"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "th-col"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: data.th_all_in_one_woo_cart.imgUrl
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "th-col"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "title-plugin"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, data.th_all_in_one_woo_cart.name), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    className: "plugin-detail thickbox open-plugin-details-modal",
+    href: data.th_all_in_one_woo_cart.detail_link
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Details &amp; Version', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    "data-activated": "Activated",
+    "data-msg": "Activating",
+    "data-init": data.th_all_in_one_woo_cart.active_filename,
+    "data-slug": data.th_all_in_one_woo_cart.slug,
+    className: `button install-now button ${data.th_all_in_one_woo_cart.slug}`
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Install Now', 'blur')))))));
 }
 /* harmony default export */ __webpack_exports__["default"] = (PluginData);
 
