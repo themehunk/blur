@@ -58,7 +58,7 @@ $obj = new Blur_theme_option();
 
 add_action( 'rest_api_init', function () {
     register_rest_route( 'wp1/blur/', 'avd', array(
-        'methods' => 'POST',
+        'methods' => 'GET',
         'callback' => 'my_custom_endpoint_callback',
     ) );
 } );
@@ -70,6 +70,8 @@ function my_custom_endpoint_callback() {
         'image_url' => 'https://example.com/images/my-custom-image.jpg',
     );
 
-    return register_rest_route($data);
+    $json_data = json_encode( $data );
+
+    return register_rest_route($json_data);
 
 }
