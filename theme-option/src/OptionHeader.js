@@ -1,4 +1,5 @@
 import {Fragment} from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 const OptionHeader = () => {
     return (
@@ -17,12 +18,12 @@ const OptionHeader = () => {
               </div>
               <div className="th-col2">
                     <div className="th-option-heading">
-                       <h2>Welcome To Blur Theme</h2>
-                       <p>Blur Theme is a Free WooCommerce theme for creating clean and professional shopping stores.</p>
+                       <h2>{__( 'Welcome To Blur Theme', 'blur' )}</h2>
+                       <p>{__( 'Blur Theme is a Free WooCommerce theme for creating clean and professional shopping stores', 'blur' )}</p>
                     </div>
                     <div className="th-option-detail">
-                        <p className="th-version">Version 1.2.6</p>
-                        <span>Free</span>
+                        <p className="th-version">{__( 'Version 1.2.6', 'blur' )}</p>
+                        <span>{__( 'Free', 'blur' )}</span>
                     </div>
               </div>
             </div>
