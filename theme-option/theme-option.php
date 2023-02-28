@@ -32,8 +32,41 @@ class Blur_theme_option{
     add_theme_page(esc_html__('Blur', 'blur'), $menu_title, 'edit_theme_options', 'blur_thunk_started', array($this, 'blur_settings_page'));   
    
   }
+
+
+   function blur_plugin_status($plugin_slug){
+
+   $status = is_dir( WP_PLUGIN_DIR . '/' . $slug );
+
+   if($status){
+
+      if(is_plugin_active('th-all-in-one-woo-cart/th-all-in-one-woo-cart.php')){
+        $thiowc_active = true; 
+      }else{
+        $thiowc_active = false;
+      }
+
+   }else{
+
+    
+   }
+
+
+  }
    
    function blur_enqueue_scripts() {
+    
+    if(is_plugin_active('th-all-in-one-woo-cart/th-all-in-one-woo-cart.php')){
+      $thiowc_active = true; 
+    }else{
+      $thiowc_active = false;
+    }
+
+    if(is_dir( WP_PLUGIN_DIR . '/th-all-in-one-woo-cart' )){
+      $thiowc_instl = true; 
+    }else{
+      $thiowc_instl = false;
+    }
 
     wp_enqueue_style( 'blur-settings-css', get_template_directory_uri() . '/theme-option/build/style-index.css', array(), '1.0.0', false );
 
@@ -45,6 +78,11 @@ class Blur_theme_option{
         array(
           'homeUrl' => get_home_url(),
           'ajaxurl' => admin_url( 'admin-ajax.php' ),
+          'wpnonce' => wp_create_nonce( "ajaxnonce" ),
+          'thiowc_status' => array(
+             'thiowc_instl' => $thiowc_instl,
+             'thiowc_active' => $thiowc_active,
+           ),
         )
     );
    }
@@ -57,13 +95,9 @@ class Blur_theme_option{
 
   }
   
-
 }
 
 $obj = new Blur_theme_option();
-
-
-
 
 /************************ */
 // plugin data deatial
@@ -86,11 +120,12 @@ function blur_theme_option_endpoint_callback() {
            'pro_link' => esc_url('https://themehunk.com/th-all-in-one-woo-cart/'),
            'active_filename' => 'th-all-in-one-woo-cart/th-all-in-one-woo-cart.php',
            'slug'=> 'th-all-in-one-woo-cart',
-           'detail_link' => get_home_url().'/wp-admin/plugin-install.php?tab=plugin-information&amp;plugin=hunk-companion&amp;TB_iframe=true&amp;width=772&amp;height=500',
-           'pro-plugin' => array('slug'=>'th-all-in-one-woo-cart-pro',
+           'detail_link' => get_home_url().'/wp-admin/plugin-install.php?tab=plugin-information&amp;plugin=th-all-in-one-woo-cart&amp;TB_iframe=true&amp;width=772&amp;height=500',
+           'pro-plugin' => array(
+                               'slug'=>'th-all-in-one-woo-cart-pro',
                                'init'=>'th-all-in-one-woo-cart-pro/th-all-in-one-woo-cart-pro.php',
-                                'admin_link'=>'th-all-in-one-woo-cart-pro',
-                                'docs'=>esc_url('https://themehunk.com/docs/th-all-in-one-woo-cart/'),
+                               'admin_link'=>'th-all-in-one-woo-cart-pro',
+                               'docs'=>esc_url('https://themehunk.com/docs/th-all-in-one-woo-cart/'),
     
                                )
        )
@@ -103,13 +138,72 @@ function blur_theme_option_endpoint_callback() {
 
 function blur_install_plugin() {
 
-$decoded_data = json_decode( $_POST['data'], true );
+if ( ! current_user_can( 'administrator' ) ) {
 
-$init = $decoded_data["init"];
-$slug = $decoded_data["slug"];
+    wp_die( - 1, 403 );
+    
+}
+
+check_ajax_referer( 'ajaxnonce', 'nonce' );
+
+$init = $_POST["init"];
+$slug = $_POST["slug"];
+$instl = $_POST["instl"];
 
 $plugin_init = (isset($init)) ? esc_attr($init) : '';
 
+if (! is_plugin_active($plugin_init)) {
+
+  $status = array(
+		'install' => 'plugin',
+		'slug'    => sanitize_key( wp_unslash( $slug ) ),
+	);
+
+  if ( ! current_user_can( 'install_plugins' ) ) {
+		$status['errorMessage'] = __( 'Sorry, you are not allowed to install plugins on this site.' );
+		wp_send_json_error( $status );
+	}
+
+  $api = plugins_api(
+		'plugin_information',
+		array(
+			'slug'   => sanitize_key( wp_unslash( $slug ) ),
+			'fields' => array(
+				'sections' => false,
+			),
+		)
+	);
+
+  if ( is_wp_error( $api ) ) {
+		$status['errorMessage'] = $api->get_error_message();
+		wp_send_json_error( $status );
+	}
+  $status['pluginName'] = $api->name;
+
+  $skin     = new WP_Ajax_Upgrader_Skin();
+	$upgrader = new Plugin_Upgrader( $skin );
+	echo $result   = $upgrader->install( $api->download_link );
+
+
+
+ $install_status = install_plugin_install_status( $api );
+
+	$pagenow        = isset( $_POST['pagenow'] ) ? sanitize_key( $_POST['pagenow'] ) : '';
+
+	// If installation request is coming from import page, do not return network activation link.
+	$plugins_url = ( 'import' === $pagenow ) ? admin_url( 'plugins.php' ) : network_admin_url( 'plugins.php' );
+
+	if ( current_user_can( 'activate_plugin', $install_status['file'] ) && is_plugin_inactive( $install_status['file'] ) ) {
+		$status['activateUrl'] = add_query_arg(
+			array(
+				'_wpnonce' => wp_create_nonce( 'activate-plugin_' . $install_status['file'] ),
+				'action'   => 'activate',
+				'plugin'   => $install_status['file'],
+			),
+			$plugins_url
+		);
+	}
+  
 $activate = activate_plugin($plugin_init);
 
 if (is_wp_error($activate)) {
@@ -127,6 +221,10 @@ if (is_wp_error($activate)) {
       'message' => __('Plugin Successfully Activated', 'blur'),
     )
   );
+
+
+
+}
 
 die();
 
