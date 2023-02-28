@@ -82,6 +82,9 @@ const OptionContent = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+
 
 
 const OptionHeader = () => {
@@ -108,11 +111,11 @@ const OptionHeader = () => {
     className: "th-col2"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "th-option-heading"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, "Welcome To Blur Theme"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Blur Theme is a Free WooCommerce theme for creating clean and professional shopping stores.")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Welcome To Blur Theme', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Blur Theme is a Free WooCommerce theme for creating clean and professional shopping stores', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "th-option-detail"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "th-version"
-  }, "Version 1.2.6"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, "Free")))))));
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Version 1.2.6', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Free', 'blur'))))))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (OptionHeader);
 
@@ -182,6 +185,7 @@ __webpack_require__.r(__webpack_exports__);
 function PluginData() {
   const [data, setData] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null);
   const homeUrl = wpapi.homeUrl;
+  const ajaxUrl = wpapi.ajaxurl;
   const Url = `${homeUrl}/wp-json/wp/v1/blur`;
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
     fetch(`${Url}`).then(response => response.json()).then(data => {
@@ -191,30 +195,28 @@ function PluginData() {
   if (!data) {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, "Loading...");
   }
+  const checkActive = async e => {
+    const data = {
+      init: e.target.dataset.init,
+      slug: e.target.dataset.slug
+    };
+    const response = await fetch(`${ajaxUrl}?action=blur_install_plugin`, {
+      method: 'POST',
+      body: JSON.stringify(data)
+    });
+    const jsondata = await response.json();
+    try {
+      console.log(jsondata);
+      // Process the data here
+    } catch (error) {
+      console.error('Error parsing JSON:', error);
+    }
+  };
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "recommended-option-wrap"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "th-option-2-col"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "th-option-row content-box"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "th-col"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: data.hunkcompanion.imgUrl
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "th-col"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "title-plugin"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, data.hunkcompanion.name), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    className: "plugin-detail thickbox open-plugin-details-modal",
-    href: data.hunkcompanion.detail_link
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Details &amp; Version', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    "data-activated": "Activated",
-    "data-msg": "Activating",
-    "data-init": data.hunkcompanion.active_filename,
-    "data-slug": data.hunkcompanion.slug,
-    className: `button install-now button ${data.hunkcompanion.slug}`
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Install Now', 'blur')))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "th-option-row content-box"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "th-col"
@@ -227,7 +229,8 @@ function PluginData() {
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, data.th_all_in_one_woo_cart.name), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     className: "plugin-detail thickbox open-plugin-details-modal",
     href: data.th_all_in_one_woo_cart.detail_link
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Details &amp; Version', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Details & Version', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    onClick: checkActive,
     "data-activated": "Activated",
     "data-msg": "Activating",
     "data-init": data.th_all_in_one_woo_cart.active_filename,
