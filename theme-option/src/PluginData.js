@@ -11,13 +11,49 @@ function PluginData() {
   const ajaxUrl = wpapi.ajaxurl;
 
   const Url = `${homeUrl}/wp-json/wp/v1/blur`;
+
+  let msg;
+
+  let cls;
+
+  let instl;
+
+  if(wpapi.thiowc_status.thiowc_instl == true){
+
+    if(wpapi.thiowc_status.thiowc_active == true){
+  
+      msg = 'Activated';
+      cls = 'button btn-activated disabled';
+    
+      }else{
+    
+      msg = 'Activate Now';
+      cls = 'button btn-active-now';
+    
+      }
+    
+  }else{
+    
+    msg = 'Install Now';
+    cls = 'button btn-install-now';
+    instl= 'install'
+
+  }
+
+  const [message, setMessage] = useState(msg);
+
+  const [buttonClass, setButtonClass] = useState(cls);
+
+  const [instlplg, setInstlplg] = useState(instl);
+  
   
   useEffect(() => {
     fetch(`${Url}`)
       .then(response => response.json())
       .then(data => {
         setData(data);
-      });
+      });  
+
   }, []);
 
   if (!data) {
@@ -28,20 +64,25 @@ function PluginData() {
 
       const data = { 
         init: e.target.dataset.init,
-        slug: e.target.dataset.slug, 
+        slug: e.target.dataset.slug,
+        instl: e.target.dataset.instl, 
+        nonce: wpapi.wpnonce, 
         };
 
       const response = await fetch(`${ajaxUrl}?action=blur_install_plugin`, {
         method: 'POST',
-        body: JSON.stringify(data)
+        body: new URLSearchParams(data)
       });
 
-      const jsondata = await response.json();
+      const plgdata = await response.text();
 
       try {
 
-       console.log(jsondata);
-        // Process the data here
+        console.log(plgdata);
+
+       setMessage('Activated');
+       setButtonClass('button btn-activated disabled');
+
       } catch (error) {
 
         console.error('Error parsing JSON:', error);
@@ -62,7 +103,7 @@ function PluginData() {
             <h4>{data.th_all_in_one_woo_cart.name}</h4>
             <a className="plugin-detail thickbox open-plugin-details-modal" href={data.th_all_in_one_woo_cart.detail_link}>{__( 'Details & Version', 'blur' )}</a>
             </div>
-            <button onClick={checkActive} data-activated="Activated" data-msg="Activating" data-init={data.th_all_in_one_woo_cart.active_filename} data-slug={data.th_all_in_one_woo_cart.slug} className= {`button install-now button ${data.th_all_in_one_woo_cart.slug}`} >{__( 'Install Now', 'blur' )}                
+            <button onClick={checkActive} data-instl={instlplg} data-init={data.th_all_in_one_woo_cart.active_filename} data-slug={data.th_all_in_one_woo_cart.slug} className= {`${data.th_all_in_one_woo_cart.slug} ${buttonClass}`} >{message}                
             </button>
             </div>
           </div>

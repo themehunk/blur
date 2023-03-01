@@ -187,6 +187,25 @@ function PluginData() {
   const homeUrl = wpapi.homeUrl;
   const ajaxUrl = wpapi.ajaxurl;
   const Url = `${homeUrl}/wp-json/wp/v1/blur`;
+  let msg;
+  let cls;
+  let instl;
+  if (wpapi.thiowc_status.thiowc_instl == true) {
+    if (wpapi.thiowc_status.thiowc_active == true) {
+      msg = 'Activated';
+      cls = 'button btn-activated disabled';
+    } else {
+      msg = 'Activate Now';
+      cls = 'button btn-active-now';
+    }
+  } else {
+    msg = 'Install Now';
+    cls = 'button btn-install-now';
+    instl = 'install';
+  }
+  const [message, setMessage] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(msg);
+  const [buttonClass, setButtonClass] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(cls);
+  const [instlplg, setInstlplg] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(instl);
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
     fetch(`${Url}`).then(response => response.json()).then(data => {
       setData(data);
@@ -198,16 +217,19 @@ function PluginData() {
   const checkActive = async e => {
     const data = {
       init: e.target.dataset.init,
-      slug: e.target.dataset.slug
+      slug: e.target.dataset.slug,
+      instl: e.target.dataset.instl,
+      nonce: wpapi.wpnonce
     };
     const response = await fetch(`${ajaxUrl}?action=blur_install_plugin`, {
       method: 'POST',
-      body: JSON.stringify(data)
+      body: new URLSearchParams(data)
     });
-    const jsondata = await response.json();
+    const plgdata = await response.text();
     try {
-      console.log(jsondata);
-      // Process the data here
+      console.log(plgdata);
+      setMessage('Activated');
+      setButtonClass('button btn-activated disabled');
     } catch (error) {
       console.error('Error parsing JSON:', error);
     }
@@ -231,12 +253,11 @@ function PluginData() {
     href: data.th_all_in_one_woo_cart.detail_link
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Details & Version', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     onClick: checkActive,
-    "data-activated": "Activated",
-    "data-msg": "Activating",
+    "data-instl": instlplg,
     "data-init": data.th_all_in_one_woo_cart.active_filename,
     "data-slug": data.th_all_in_one_woo_cart.slug,
-    className: `button install-now button ${data.th_all_in_one_woo_cart.slug}`
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Install Now', 'blur')))))));
+    className: `${data.th_all_in_one_woo_cart.slug} ${buttonClass}`
+  }, message))))));
 }
 /* harmony default export */ __webpack_exports__["default"] = (PluginData);
 
