@@ -11,41 +11,6 @@ function PluginData() {
   const ajaxUrl = wpapi.ajaxurl;
 
   const Url = `${homeUrl}/wp-json/wp/v1/blur`;
-
-  let msg;
-
-  let cls;
-
-  let instl;
-
-  if(wpapi.thiowc_status.thiowc_instl == true){
-
-    if(wpapi.thiowc_status.thiowc_active == true){
-  
-      msg = 'Activated';
-      cls = 'button btn-activated disabled';
-    
-      }else{
-    
-      msg = 'Activate Now';
-      cls = 'button btn-active-now';
-    
-      }
-    
-  }else{
-    
-    msg = 'Install Now';
-    cls = 'button btn-install-now';
-    instl= 'install'
-
-  }
-
-  const [message, setMessage] = useState(msg);
-
-  const [buttonClass, setButtonClass] = useState(cls);
-
-  const [instlplg, setInstlplg] = useState(instl);
-  
   
   useEffect(() => {
     fetch(`${Url}`)
@@ -60,7 +25,14 @@ function PluginData() {
     return <div>Loading...</div>;
   }
 
-  const checkActive = async (e) => {
+  function Button(props) {
+
+    const [message, setMessage] = useState('Active Now');
+    const [updateMsg, setupdateMsg] = useState('button btn');
+
+    const checkActive = async (e) => {
+
+      setupdateMsg('button btn updating-message');
 
       const data = { 
         init: e.target.dataset.init,
@@ -78,17 +50,33 @@ function PluginData() {
 
       try {
 
-        console.log(plgdata);
-
        setMessage('Activated');
-       setButtonClass('button btn-activated disabled');
+       setupdateMsg('button btn disabled');
 
       } catch (error) {
 
         console.error('Error parsing JSON:', error);
 
       }
-  };
+
+   }
+
+   
+    return (
+      <button 
+      data-label={message}
+      data-init={props.init}
+      data-slug={props.slug}
+      onClick={checkActive} 
+      data-instl={props.instl}
+      className={updateMsg}
+      data-actstatus={props.status}
+      >
+      {message}
+      </button>
+    );
+
+  }
 
   return (
     <Fragment>
@@ -103,8 +91,21 @@ function PluginData() {
             <h4>{data.th_all_in_one_woo_cart.name}</h4>
             <a className="plugin-detail thickbox open-plugin-details-modal" href={data.th_all_in_one_woo_cart.detail_link}>{__( 'Details & Version', 'blur' )}</a>
             </div>
-            <button onClick={checkActive} data-instl={instlplg} data-init={data.th_all_in_one_woo_cart.active_filename} data-slug={data.th_all_in_one_woo_cart.slug} className= {`${data.th_all_in_one_woo_cart.slug} ${buttonClass}`} >{message}                
-            </button>
+            <Button init={data.th_all_in_one_woo_cart.active_filename} slug={data.th_all_in_one_woo_cart.slug} actstatus={wpapi.thiowc_status.thiowc_active}>active                
+            </Button>
+            </div>
+          </div>
+          <div className="th-option-row content-box">
+             <div className="th-col">
+              <img src={data.th_advance_product_search.imgUrl}/>
+            </div>
+            <div className="th-col">
+            <div className="title-plugin">
+            <h4>{data.th_advance_product_search.name}</h4>
+            <a className="plugin-detail thickbox open-plugin-details-modal" href={data.th_advance_product_search.detail_link}>{__( 'Details & Version', 'blur' )}</a>
+            </div>
+            <Button init={data.th_advance_product_search.active_filename} slug={data.th_advance_product_search.slug} >active               
+            </Button>
             </div>
           </div>
         </div>
