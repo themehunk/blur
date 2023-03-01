@@ -62,10 +62,22 @@ class Blur_theme_option{
       $thiowc_active = false;
     }
 
-    if(is_dir( WP_PLUGIN_DIR . '/th-all-in-one-woo-cart' )){
-      $thiowc_instl = true; 
+    if(is_plugin_active('th-advance-product-search/th-advance-product-search.php')){
+      $thaps_active = 'active'; 
     }else{
-      $thiowc_instl = false;
+      $thaps_active = 'active-now';
+    }
+
+    if(is_dir( WP_PLUGIN_DIR . '/th-all-in-one-woo-cart' )){
+      $thiowc_instl = 'install'; 
+    }else{
+      $thiowc_instl = 'install-now';
+    }
+
+    if(is_dir( WP_PLUGIN_DIR . '/th-advance-product-search' )){
+      $thaps_instl = true; 
+    }else{
+      $thaps_instl = false;
     }
 
     wp_enqueue_style( 'blur-settings-css', get_template_directory_uri() . '/theme-option/build/style-index.css', array(), '1.0.0', false );
@@ -83,6 +95,10 @@ class Blur_theme_option{
              'thiowc_instl' => $thiowc_instl,
              'thiowc_active' => $thiowc_active,
            ),
+           'thaps_status' => array(
+            'thaps_instl' => $thaps_instl,
+            'thaps_active' => $thaps_active,
+          ),
         )
     );
    }
@@ -115,7 +131,7 @@ function blur_theme_option_endpoint_callback() {
     $data = array(
     
         'th_all_in_one_woo_cart' => array(
-           'name' => esc_html__( 'Th All In One Woo Cart', 'th-shop-mania' ),
+           'name' => esc_html__( 'Th All In One Woo Cart', 'blur' ),
            'imgUrl' => 'https://ps.w.org/th-all-in-one-woo-cart/assets/icon-128x128.png',
            'pro_link' => esc_url('https://themehunk.com/th-all-in-one-woo-cart/'),
            'active_filename' => 'th-all-in-one-woo-cart/th-all-in-one-woo-cart.php',
@@ -128,7 +144,22 @@ function blur_theme_option_endpoint_callback() {
                                'docs'=>esc_url('https://themehunk.com/docs/th-all-in-one-woo-cart/'),
     
                                )
-       )
+           ),
+           'th_advance_product_search' => array(
+            'name' => esc_html__( 'Th Advance Product Search', 'blur' ),
+            'imgUrl' => 'https://ps.w.org/th-advance-product-search/assets/icon-128x128.gif',
+            'pro_link' => esc_url('https://themehunk.com/advance-product-search/'),
+            'active_filename' => 'th-advance-product-search/th-advance-product-search.php',
+            'slug'=> 'th-advance-product-search',
+            'detail_link' => get_home_url().'/wp-admin/plugin-install.php?tab=plugin-information&amp;plugin=th-advance-product-searchs&amp;TB_iframe=true&amp;width=772&amp;height=500',
+            'pro-plugin' => array(
+                       'slug'=>'th-advance-product-search-pro',
+                       'init'=>'th-advance-product-search-pro/th-advance-product-search-pro.php',
+                       'admin_link'=>'th-advance-product-search-pro',
+                       'docs'=>esc_url('https://themehunk.com/docs/th-advance-product-search/'),
+
+                    )
+        ),
        
     );
 
@@ -152,7 +183,8 @@ $instl = $_POST["instl"];
 
 $plugin_init = (isset($init)) ? esc_attr($init) : '';
 
-if (! is_plugin_active($plugin_init)) {
+
+if (! is_plugin_active($plugin_init) && $instl == 'install') {
 
   $status = array(
 		'install' => 'plugin',
@@ -175,22 +207,23 @@ if (! is_plugin_active($plugin_init)) {
 	);
 
   if ( is_wp_error( $api ) ) {
+
 		$status['errorMessage'] = $api->get_error_message();
 		wp_send_json_error( $status );
-	}
-  $status['pluginName'] = $api->name;
 
+	}
+
+  $status['pluginName'] = $api->name;
   $skin     = new WP_Ajax_Upgrader_Skin();
 	$upgrader = new Plugin_Upgrader( $skin );
-	echo $result   = $upgrader->install( $api->download_link );
+  $result   = $upgrader->install( $api->download_link );
 
-
-
- $install_status = install_plugin_install_status( $api );
+  $install_status = install_plugin_install_status( $api );
 
 	$pagenow        = isset( $_POST['pagenow'] ) ? sanitize_key( $_POST['pagenow'] ) : '';
 
 	// If installation request is coming from import page, do not return network activation link.
+
 	$plugins_url = ( 'import' === $pagenow ) ? admin_url( 'plugins.php' ) : network_admin_url( 'plugins.php' );
 
 	if ( current_user_can( 'activate_plugin', $install_status['file'] ) && is_plugin_inactive( $install_status['file'] ) ) {
@@ -202,6 +235,11 @@ if (! is_plugin_active($plugin_init)) {
 			),
 			$plugins_url
 		);
+
+	}
+  
+  if ( is_multisite() && current_user_can( 'manage_network_plugins' ) && 'import' !== $pagenow ) {
+		$status['activateUrl'] = add_query_arg( array( 'networkwide' => 1 ), $status['activateUrl'] );
 	}
   
 $activate = activate_plugin($plugin_init);
@@ -222,7 +260,25 @@ if (is_wp_error($activate)) {
     )
   );
 
+}elseif(! is_plugin_active($plugin_init)){
 
+  $activate = activate_plugin($plugin_init);
+
+  if (is_wp_error($activate)) {
+      wp_send_json_error(
+        array(
+          'success' => false,
+          'message' => $activate->get_error_message(),
+        )
+      );
+    }
+  
+    wp_send_json_success(
+      array(
+        'success' => true,
+        'message' => __('Plugin Successfully Activated', 'blur'),
+      )
+    );
 
 }
 
@@ -234,3 +290,4 @@ add_action('wp_ajax_blur_install_plugin', 'blur_install_plugin');
 add_action('wp_ajax_nopriv_blur_install_plugin', 'blur_install_plugin');
 
 include_once(ABSPATH . 'wp-admin/includes/plugin-install.php');
+include_once(ABSPATH . 'wp-admin/includes/class-wp-upgrader.php');

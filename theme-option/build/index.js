@@ -187,25 +187,6 @@ function PluginData() {
   const homeUrl = wpapi.homeUrl;
   const ajaxUrl = wpapi.ajaxurl;
   const Url = `${homeUrl}/wp-json/wp/v1/blur`;
-  let msg;
-  let cls;
-  let instl;
-  if (wpapi.thiowc_status.thiowc_instl == true) {
-    if (wpapi.thiowc_status.thiowc_active == true) {
-      msg = 'Activated';
-      cls = 'button btn-activated disabled';
-    } else {
-      msg = 'Activate Now';
-      cls = 'button btn-active-now';
-    }
-  } else {
-    msg = 'Install Now';
-    cls = 'button btn-install-now';
-    instl = 'install';
-  }
-  const [message, setMessage] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(msg);
-  const [buttonClass, setButtonClass] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(cls);
-  const [instlplg, setInstlplg] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(instl);
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
     fetch(`${Url}`).then(response => response.json()).then(data => {
       setData(data);
@@ -214,26 +195,39 @@ function PluginData() {
   if (!data) {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, "Loading...");
   }
-  const checkActive = async e => {
-    const data = {
-      init: e.target.dataset.init,
-      slug: e.target.dataset.slug,
-      instl: e.target.dataset.instl,
-      nonce: wpapi.wpnonce
+  function Button(props) {
+    const [message, setMessage] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('Active Now');
+    const [updateMsg, setupdateMsg] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('button btn');
+    const checkActive = async e => {
+      setupdateMsg('button btn updating-message');
+      const data = {
+        init: e.target.dataset.init,
+        slug: e.target.dataset.slug,
+        instl: e.target.dataset.instl,
+        nonce: wpapi.wpnonce
+      };
+      const response = await fetch(`${ajaxUrl}?action=blur_install_plugin`, {
+        method: 'POST',
+        body: new URLSearchParams(data)
+      });
+      const plgdata = await response.text();
+      try {
+        setMessage('Activated');
+        setupdateMsg('button btn disabled');
+      } catch (error) {
+        console.error('Error parsing JSON:', error);
+      }
     };
-    const response = await fetch(`${ajaxUrl}?action=blur_install_plugin`, {
-      method: 'POST',
-      body: new URLSearchParams(data)
-    });
-    const plgdata = await response.text();
-    try {
-      console.log(plgdata);
-      setMessage('Activated');
-      setButtonClass('button btn-activated disabled');
-    } catch (error) {
-      console.error('Error parsing JSON:', error);
-    }
-  };
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+      "data-label": message,
+      "data-init": props.init,
+      "data-slug": props.slug,
+      onClick: checkActive,
+      "data-instl": props.instl,
+      className: updateMsg,
+      "data-actstatus": props.status
+    }, message);
+  }
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "recommended-option-wrap"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -251,13 +245,27 @@ function PluginData() {
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, data.th_all_in_one_woo_cart.name), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     className: "plugin-detail thickbox open-plugin-details-modal",
     href: data.th_all_in_one_woo_cart.detail_link
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Details & Version', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    onClick: checkActive,
-    "data-instl": instlplg,
-    "data-init": data.th_all_in_one_woo_cart.active_filename,
-    "data-slug": data.th_all_in_one_woo_cart.slug,
-    className: `${data.th_all_in_one_woo_cart.slug} ${buttonClass}`
-  }, message))))));
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Details & Version', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Button, {
+    init: data.th_all_in_one_woo_cart.active_filename,
+    slug: data.th_all_in_one_woo_cart.slug,
+    actstatus: wpapi.thiowc_status.thiowc_active
+  }, "active"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "th-option-row content-box"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "th-col"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: data.th_advance_product_search.imgUrl
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "th-col"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "title-plugin"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, data.th_advance_product_search.name), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    className: "plugin-detail thickbox open-plugin-details-modal",
+    href: data.th_advance_product_search.detail_link
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Details & Version', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Button, {
+    init: data.th_advance_product_search.active_filename,
+    slug: data.th_advance_product_search.slug
+  }, "active"))))));
 }
 /* harmony default export */ __webpack_exports__["default"] = (PluginData);
 
