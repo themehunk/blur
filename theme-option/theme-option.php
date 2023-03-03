@@ -47,6 +47,27 @@ class Blur_theme_option{
       $thaps_active = false;
     }
 
+    if(is_plugin_active('th-product-compare/th-product-compare.php')){
+      $thpc_active = true; 
+    }else{
+      $thpc_active = false;
+    }
+    if(is_plugin_active('th-variation-swatches/th-variation-swatches.php')){
+      $thvs_active = true; 
+    }else{
+      $thvs_active = false;
+    }
+    if(is_plugin_active('lead-form-builder/lead-form-builder.php')){
+      $thlf_active = true; 
+    }else{
+      $thlf_active = false;
+    }
+    if(is_plugin_active('wp-popup-builder/wp-popup-builder.php')){
+      $thwpbl_active = true; 
+    }else{
+      $thwpbl_active = false;
+    }
+
     if(is_dir( WP_PLUGIN_DIR . '/th-all-in-one-woo-cart' )){
       $thiowc_instl = 'installed'; 
     }else{
@@ -58,6 +79,29 @@ class Blur_theme_option{
     }else{
       $thaps_instl = 'install-now';
     }
+    if(is_dir( WP_PLUGIN_DIR . '/th-product-compare' )){
+      $thpc_instl = 'installed'; 
+    }else{
+      $thpc_instl = 'install-now';
+    }
+    if(is_dir( WP_PLUGIN_DIR . '/th-variation-swatches' )){
+      $thvs_instl = 'installed'; 
+    }else{
+      $thvs_instl = 'install-now';
+    }
+
+    if(is_dir( WP_PLUGIN_DIR . '/lead-form-builder' )){
+      $thlf_instl = 'installed'; 
+    }else{
+      $thlf_instl = 'install-now';
+    }
+
+    if(is_dir( WP_PLUGIN_DIR . '/wp-popup-builder' )){
+      $thwpbl_instl = 'installed'; 
+    }else{
+      $thwpbl_instl = 'install-now';
+    }
+
 
     wp_enqueue_style( 'blur-settings-css', get_template_directory_uri() . '/theme-option/build/style-index.css', array(), '1.0.0', false );
 
@@ -70,6 +114,7 @@ class Blur_theme_option{
           'homeUrl' => get_home_url(),
           'ajaxurl' => admin_url( 'admin-ajax.php' ),
           'wpnonce' => wp_create_nonce( "ajaxnonce" ),
+          'blurUri' => trailingslashit(get_template_directory_uri()),
           'thiowc_status' => array(
              'thiowc_instl' => $thiowc_instl,
              'thiowc_active' => $thiowc_active,
@@ -77,6 +122,22 @@ class Blur_theme_option{
            'thaps_status' => array(
             'thaps_instl' => $thaps_instl,
             'thaps_active' => $thaps_active,
+          ),
+          'thpc_status' => array(
+            'thpc_instl' => $thpc_instl,
+            'thpc_active' => $thpc_active,
+          ),
+          'thvs_status' => array(
+            'thvs_instl' => $thvs_instl,
+            'thvs_active' => $thvs_active,
+          ),
+          'thlf_status' => array(
+            'thlf_instl' => $thlf_instl,
+            'thlf_active' => $thlf_active,
+          ),
+          'thwpbl_status' => array(
+            'thwpbl_instl' => $thwpbl_instl,
+            'thwpbl_active' => $thwpbl_active,
           ),
         )
     );
@@ -139,6 +200,61 @@ function blur_theme_option_endpoint_callback() {
 
                     )
         ),
+        'th_product_compare' => array(
+          'name' => esc_html__( 'TH Product Compare', 'blur' ),
+          'imgUrl' => 'https://ps.w.org/th-product-compare/assets/icon-128x128.gif',
+          'pro_link' => esc_url('https://themehunk.com/th-product-compare/'),
+          'active_filename' => 'th-product-compare/th-product-compare.php',
+          'slug'=> 'th-product-compare',
+          'detail_link' => get_home_url().'/wp-admin/plugin-install.php?tab=plugin-information&amp;plugin=th-product-compare&amp;TB_iframe=true&amp;width=772&amp;height=500',
+          'pro-plugin' => array(
+                     'slug'=>'th-product-compare-pro',
+                     'init'=>'th-product-compare-pro/th-product-compare-pro.php',
+                     'admin_link'=>'th-product-compare-pro',
+                     'docs'=>esc_url('https://themehunk.com/docs/th-product-compare/'),
+
+                  )
+      ),
+      'th_variation_swatches' => array(
+        'name' => esc_html__( 'Th Variation Swatches', 'blur' ),
+        'imgUrl' => 'https://ps.w.org/th-variation-swatches/assets/icon-128x128.gif',
+        'pro_link' => esc_url('https://themehunk.com/th-variation-swatches/'),
+        'active_filename' => 'th-variation-swatches/th-variation-swatches.php',
+        'slug'=> 'th-variation-swatches',
+        'pro-plugin' => array(
+                  'slug'=>'th-variation-swatches',
+                  'init'=>'th-variation-swatches-pro/th-variation-swatches-pro.php',
+                   'admin_link'=>'th-variation-swatches',
+                   'docs'=>esc_url('https://themehunk.com/docs/th-variation-swatches-plugin/'),
+                )
+      ), 
+      'lead_form_builder' => array(
+        'name' => esc_html__( 'Lead Form Builder', 'th-shop-mania' ),
+        'imgUrl' => 'https://ps.w.org/lead-form-builder/assets/icon-128x128.png',
+        'pro_link' => esc_url('https://themehunk.com/product/lead-form-builder-pro/'),
+        'active_filename' => 'lead-form-builder/lead-form-builder.php',
+        'slug'=> 'lead-form-builder',
+        'pro-plugin' => array(
+                 'slug'=>'lead-form-builder',
+                  'init'=>'lead-form-builder/init.php',
+                    'admin_link'=>'wplf-plugin-menu',
+                    'docs'=>esc_url('https://themehunk.com/docs/lead-form-builder-pro/'),
+                )
+    ),
+    'wp_popup_builder' => array(
+        'name' => esc_html__( 'WP Popup Builder – Popup Forms & Newsletter', 'th-shop-mania' ),
+        'imgUrl' => 'https://ps.w.org/wp-popup-builder/assets/icon-128x128.png',
+        'pro_link' => esc_url('https://themehunk.com/wp-popup-builder-pro/'),
+        'active_filename' => 'wp-popup-builder/wp-popup-builder.php',
+        'slug'=> 'wp-popup-builder',
+        'pro-plugin' => array(
+                 'slug'=>'wp-popup-builder',
+                  'init'=>'wp-popup-builder-pro/wp-popup-builder.php',
+                  'admin_link'=>'wppb',
+                  'docs'=>esc_url('https://themehunk.com/docs/wp-popup-builder-pro/'),
+                )
+    ),
+
        
     );
 

@@ -6,8 +6,8 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    background: #2c3e6e;
-    border-radius: 2px;
+    background: #4570E3;
+    border-radius: 6px;
     border: 1px solid #f4f2f2;
     box-shadow: 0px 0px 4px 0px #dcf5ff;
     box-shadow: 2px 2px 3px 0px #e4e4e6;
@@ -22,12 +22,15 @@
     width: 100px;
     padding: 1rem;
 }
-.th-option-top-hdr .th-col1 .logo-image{
-display: block;
+.th-logo-img{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 2rem 0;
 }
 
 .th-option-top-hdr .th-col2 {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     display: flex;
     align-items: center;
 }
@@ -107,7 +110,7 @@ max-width:100%;
         margin: 1em 0;
     }
     .blur-tabs button {
-        padding: 1rem 1.5rem;
+        padding: 0.7rem 1.5rem;
         color: #111;
         font-size:1rem;
         font-weight: bold;
@@ -120,11 +123,15 @@ max-width:100%;
 
     .blur-tabs{
         background: #f8faff;
+        padding: 0.6rem;
     }
     
     .blur-tabs button.active {
-        color: #fff;
-        background: #225992;
+        color: #4570E3;
+        background: #fff;
+        box-shadow: 0px 6px 6px rgb(53 66 134 / 10%);
+    align-items: center;
+    border-radius: 8px;
     }  
 
     .blur-options-tab .tab-content{
@@ -165,10 +172,9 @@ max-width:100%;
         display: flex;
         flex-wrap: wrap;
         grid-column-gap: 20px;
-        grid-row-gap: 45px;
+        grid-row-gap: 20px;
 
     }
-
     .th-option-row {
         display: flex;
     }
@@ -205,6 +211,39 @@ max-width:100%;
     .th-col img {
         border: none;
         width: 128px;
+    }
+
+    .freepro-content-box ul {
+        margin: 0 0 2rem 0;
+    }
+    .freepro-content-box .freepro-tbl-heading {
+        position: sticky;
+        top: 50px;
+        color: #435c6d;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 3px;
+        background: #f8fafb;
+        border: 1px solid rgba(226,230,235,.7);
+        box-shadow: 0 2px 5px rgb(143 163 184 / 12%);
+    }
+    .freepro-content-box ul li {
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr;
+        padding: 1rem 1.8rem;
+        font-size: 0.87rem;
+    }
+    
+    .freepro-content-box ul li:not(:first-child) {
+        border-bottom: 1px dashed rgba(226,230,235,.7);
+    }
+    
+    .freepro-content-box ul li span.dashicons-yes {
+        color: #30b335;
+    }
+    
+    .freepro-content-box ul li span.dashicons-no-alt {
+        color: #ef9a9a;
     }
 
 /*# sourceMappingURL=style-index.css.map*/
