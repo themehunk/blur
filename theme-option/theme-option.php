@@ -32,27 +32,6 @@ class Blur_theme_option{
     add_theme_page(esc_html__('Blur', 'blur'), $menu_title, 'edit_theme_options', 'blur_thunk_started', array($this, 'blur_settings_page'));   
    
   }
-
-
-   function blur_plugin_status($plugin_slug){
-
-   $status = is_dir( WP_PLUGIN_DIR . '/' . $slug );
-
-   if($status){
-
-      if(is_plugin_active('th-all-in-one-woo-cart/th-all-in-one-woo-cart.php')){
-        $thiowc_active = true; 
-      }else{
-        $thiowc_active = false;
-      }
-
-   }else{
-
-    
-   }
-
-
-  }
    
    function blur_enqueue_scripts() {
     
@@ -63,21 +42,21 @@ class Blur_theme_option{
     }
 
     if(is_plugin_active('th-advance-product-search/th-advance-product-search.php')){
-      $thaps_active = 'active'; 
+      $thaps_active = true; 
     }else{
-      $thaps_active = 'active-now';
+      $thaps_active = false;
     }
 
     if(is_dir( WP_PLUGIN_DIR . '/th-all-in-one-woo-cart' )){
-      $thiowc_instl = 'install'; 
+      $thiowc_instl = 'installed'; 
     }else{
       $thiowc_instl = 'install-now';
     }
 
     if(is_dir( WP_PLUGIN_DIR . '/th-advance-product-search' )){
-      $thaps_instl = true; 
+      $thaps_instl = 'installed'; 
     }else{
-      $thaps_instl = false;
+      $thaps_instl = 'install-now';
     }
 
     wp_enqueue_style( 'blur-settings-css', get_template_directory_uri() . '/theme-option/build/style-index.css', array(), '1.0.0', false );
@@ -184,7 +163,7 @@ $instl = $_POST["instl"];
 $plugin_init = (isset($init)) ? esc_attr($init) : '';
 
 
-if (! is_plugin_active($plugin_init) && $instl == 'install') {
+if (! is_plugin_active($plugin_init) && $instl == 'install-now') {
 
   $status = array(
 		'install' => 'plugin',
