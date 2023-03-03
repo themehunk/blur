@@ -5,17 +5,17 @@ const OptionHeader = () => {
     return (
         <Fragment>
         <div className="blur-theme-options-header">
-          <div className="th-option-area">
-           <div className="th-option-top-hdr">
-              <div className="th-col1">
+       
               <div className="th-logo-img">
                         <a target="_blank" href="#" className=""> 
                         <span className="logo-image">
-                         <img className="logo-img" src="http://localhost/wp1/wp-content/themes/th-shop-mania/lib/th-option/assets/images/icon.png"></img>
+                         <img className="logo-img" src={`${wpapi.blurUri}/theme-option/assets/img/logo-themehunk.png`}></img>
                          </span>
                         </a>
-                    </div> 
-              </div>
+              </div> 
+             
+          <div className="th-option-area">
+           <div className="th-option-top-hdr">
               <div className="th-col2">
                     <div className="th-option-heading">
                        <h2>{__( 'Welcome To Blur Theme', 'blur' )}</h2>
