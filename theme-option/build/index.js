@@ -195,15 +195,27 @@ function PluginData() {
   if (!data) {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, "Loading...");
   }
-  function Button(props) {
-    const [message, setMessage] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('Active Now');
-    const [updateMsg, setupdateMsg] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('button btn');
+  function Button(props, actsts, actcls) {
+    if (props.inststatus == 'installed') {
+      if (props.actstatus == true) {
+        actsts = 'Activated';
+        actcls = 'button btn activated disabled';
+      } else {
+        actsts = 'Active Now';
+        actcls = 'button btn active-now';
+      }
+    } else {
+      actsts = 'Install Now';
+      actcls = 'button btn install-now';
+    }
+    const [message, setMessage] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(actsts);
+    const [updateMsg, setupdateMsg] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(actcls);
     const checkActive = async e => {
       setupdateMsg('button btn updating-message');
       const data = {
         init: e.target.dataset.init,
         slug: e.target.dataset.slug,
-        instl: e.target.dataset.instl,
+        instl: e.target.dataset.inststatus,
         nonce: wpapi.wpnonce
       };
       const response = await fetch(`${ajaxUrl}?action=blur_install_plugin`, {
@@ -212,20 +224,22 @@ function PluginData() {
       });
       const plgdata = await response.text();
       try {
+        console.log(plgdata);
         setMessage('Activated');
-        setupdateMsg('button btn disabled');
+        setupdateMsg('button btn activated disabled');
       } catch (error) {
         console.error('Error parsing JSON:', error);
       }
     };
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+      onClick: checkActive,
       "data-label": message,
       "data-init": props.init,
       "data-slug": props.slug,
-      onClick: checkActive,
       "data-instl": props.instl,
       className: updateMsg,
-      "data-actstatus": props.status
+      "data-actstatus": props.actstatus,
+      "data-inststatus": props.inststatus
     }, message);
   }
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -248,8 +262,9 @@ function PluginData() {
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Details & Version', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Button, {
     init: data.th_all_in_one_woo_cart.active_filename,
     slug: data.th_all_in_one_woo_cart.slug,
-    actstatus: wpapi.thiowc_status.thiowc_active
-  }, "active"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    actstatus: wpapi.thiowc_status.thiowc_active,
+    inststatus: wpapi.thiowc_status.thiowc_instl
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "th-option-row content-box"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "th-col"
@@ -264,8 +279,10 @@ function PluginData() {
     href: data.th_advance_product_search.detail_link
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Details & Version', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Button, {
     init: data.th_advance_product_search.active_filename,
-    slug: data.th_advance_product_search.slug
-  }, "active"))))));
+    slug: data.th_advance_product_search.slug,
+    actstatus: wpapi.thaps_status.thaps_active,
+    inststatus: wpapi.thaps_status.thaps_instl
+  }))))));
 }
 /* harmony default export */ __webpack_exports__["default"] = (PluginData);
 

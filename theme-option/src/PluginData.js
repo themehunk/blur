@@ -25,21 +25,45 @@ function PluginData() {
     return <div>Loading...</div>;
   }
 
-  function Button(props) {
+  function Button(props, actsts,  actcls) {
 
-    const [message, setMessage] = useState('Active Now');
-    const [updateMsg, setupdateMsg] = useState('button btn');
+    if(props.inststatus == 'installed' ){
+     
+      if(props.actstatus == true){
+
+        actsts = 'Activated';
+        actcls = 'button btn activated disabled';
+  
+      }else{
+  
+        actsts = 'Active Now';
+        actcls = 'button btn active-now';
+  
+      }
+
+    }else{
+      
+       actsts = 'Install Now';
+       actcls = 'button btn install-now'
+
+    }
+    
+   
+    const [message, setMessage] = useState(actsts);
+    const [updateMsg, setupdateMsg] = useState(actcls);
 
     const checkActive = async (e) => {
 
       setupdateMsg('button btn updating-message');
 
       const data = { 
+
         init: e.target.dataset.init,
         slug: e.target.dataset.slug,
-        instl: e.target.dataset.instl, 
+        instl: e.target.dataset.inststatus, 
         nonce: wpapi.wpnonce, 
-        };
+        
+      };
 
       const response = await fetch(`${ajaxUrl}?action=blur_install_plugin`, {
         method: 'POST',
@@ -50,8 +74,10 @@ function PluginData() {
 
       try {
 
+      console.log(plgdata);
+
        setMessage('Activated');
-       setupdateMsg('button btn disabled');
+       setupdateMsg('button btn activated disabled');
 
       } catch (error) {
 
@@ -60,17 +86,17 @@ function PluginData() {
       }
 
    }
-
    
     return (
       <button 
+      onClick={checkActive} 
       data-label={message}
       data-init={props.init}
       data-slug={props.slug}
-      onClick={checkActive} 
       data-instl={props.instl}
       className={updateMsg}
-      data-actstatus={props.status}
+      data-actstatus={props.actstatus}
+      data-inststatus={props.inststatus}
       >
       {message}
       </button>
@@ -91,7 +117,7 @@ function PluginData() {
             <h4>{data.th_all_in_one_woo_cart.name}</h4>
             <a className="plugin-detail thickbox open-plugin-details-modal" href={data.th_all_in_one_woo_cart.detail_link}>{__( 'Details & Version', 'blur' )}</a>
             </div>
-            <Button init={data.th_all_in_one_woo_cart.active_filename} slug={data.th_all_in_one_woo_cart.slug} actstatus={wpapi.thiowc_status.thiowc_active}>active                
+            <Button init={data.th_all_in_one_woo_cart.active_filename} slug={data.th_all_in_one_woo_cart.slug} actstatus={wpapi.thiowc_status.thiowc_active} inststatus={wpapi.thiowc_status.thiowc_instl}>                
             </Button>
             </div>
           </div>
@@ -104,8 +130,9 @@ function PluginData() {
             <h4>{data.th_advance_product_search.name}</h4>
             <a className="plugin-detail thickbox open-plugin-details-modal" href={data.th_advance_product_search.detail_link}>{__( 'Details & Version', 'blur' )}</a>
             </div>
-            <Button init={data.th_advance_product_search.active_filename} slug={data.th_advance_product_search.slug} >active               
+            <Button init={data.th_advance_product_search.active_filename} slug={data.th_advance_product_search.slug} actstatus={wpapi.thaps_status.thaps_active} inststatus={wpapi.thaps_status.thaps_instl} >               
             </Button>
+            
             </div>
           </div>
         </div>

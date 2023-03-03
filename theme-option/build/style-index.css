@@ -184,7 +184,7 @@ max-width:100%;
     margin-bottom:1rem;
     }
 
-    .button.btn-active-now {
+    .button.active-now {
         background: #2271b1;
         border-color: #2271b1;
         color: #fff;
@@ -192,15 +192,15 @@ max-width:100%;
         text-shadow: none;
     }
     
-    .button.btn-active-now:focus, .button.btn-active-now:hover {
+    .button.active-now:focus, .button.active-now:hover {
         background: #135e96;
         border-color: #135e96;
         color: #fff;
     }
 
-    .button.btn-activated.disabled {
+    .button.btn.disabled{
         pointer-events: none;
-       }
+        }
 
     .th-col img {
         border: none;
