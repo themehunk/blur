@@ -67,6 +67,21 @@ class Blur_theme_option{
     }else{
       $thwpbl_active = false;
     }
+    if(is_plugin_active('unlimited_blocks/unlimited_blocks.php')){
+      $thulb_active = true; 
+    }else{
+      $thulb_active = false;
+    }
+    if(is_plugin_active('woocommerce/woocommerce.php')){
+      $woo_active = true; 
+    }else{
+      $woo_active = false;
+    }
+    if(is_plugin_active('yith-woocommerce-wishlist/init.php')){
+      $yithwlst_active = true; 
+    }else{
+      $yithwlst_active = false;
+    }
 
     if(is_dir( WP_PLUGIN_DIR . '/th-all-in-one-woo-cart' )){
       $thiowc_instl = 'installed'; 
@@ -102,7 +117,23 @@ class Blur_theme_option{
       $thwpbl_instl = 'install-now';
     }
 
+    if(is_dir( WP_PLUGIN_DIR . '/unlimited_blocks' )){
+      $thulb_instl = 'installed'; 
+    }else{
+      $thulb_instl = 'install-now';
+    }
+    if(is_dir( WP_PLUGIN_DIR . '/woocommerce' )){
+      $woo_instl = 'installed'; 
+    }else{
+      $woo_instl = 'install-now';
+    }
+    if(is_dir( WP_PLUGIN_DIR . '/yith-woocommerce-wishlist' )){
+      $yithwlst_instl = 'installed'; 
+    }else{
+      $yithwlst_instl = 'install-now';
+    }
 
+    
     wp_enqueue_style( 'blur-settings-css', get_template_directory_uri() . '/theme-option/build/style-index.css', array(), '1.0.0', false );
 
     wp_enqueue_script( 'blur-settings-js', get_template_directory_uri() . '/theme-option/build/index.js', array( 'wp-element', 'wp-i18n' ), '1.0', true );
@@ -138,6 +169,18 @@ class Blur_theme_option{
           'thwpbl_status' => array(
             'thwpbl_instl' => $thwpbl_instl,
             'thwpbl_active' => $thwpbl_active,
+          ),
+          'thulb_status' => array(
+            'thulb_instl' => $thulb_instl,
+            'thulb_active' => $thulb_active,
+          ),
+          'woo_status' => array(
+            'woo_instl' => $woo_instl,
+            'woo_active' => $woo_active,
+          ),
+          'yithwlst_status' => array(
+            'yithwlst_instl' => $yithwlst_instl,
+            'yithwlst_active' => $yithwlst_active,
           ),
         )
     );
@@ -221,6 +264,7 @@ function blur_theme_option_endpoint_callback() {
         'pro_link' => esc_url('https://themehunk.com/th-variation-swatches/'),
         'active_filename' => 'th-variation-swatches/th-variation-swatches.php',
         'slug'=> 'th-variation-swatches',
+        'detail_link' => get_home_url().'/wp-admin/plugin-install.php?tab=plugin-information&amp;plugin=th-variation-swatches&amp;TB_iframe=true&amp;width=772&amp;height=500',
         'pro-plugin' => array(
                   'slug'=>'th-variation-swatches',
                   'init'=>'th-variation-swatches-pro/th-variation-swatches-pro.php',
@@ -229,11 +273,12 @@ function blur_theme_option_endpoint_callback() {
                 )
       ), 
       'lead_form_builder' => array(
-        'name' => esc_html__( 'Lead Form Builder', 'th-shop-mania' ),
+        'name' => esc_html__( 'Lead Form Builder', 'blur' ),
         'imgUrl' => 'https://ps.w.org/lead-form-builder/assets/icon-128x128.png',
         'pro_link' => esc_url('https://themehunk.com/product/lead-form-builder-pro/'),
         'active_filename' => 'lead-form-builder/lead-form-builder.php',
         'slug'=> 'lead-form-builder',
+        'detail_link' => get_home_url().'/wp-admin/plugin-install.php?tab=plugin-information&amp;plugin=lead-form-builder&amp;TB_iframe=true&amp;width=772&amp;height=500',
         'pro-plugin' => array(
                  'slug'=>'lead-form-builder',
                   'init'=>'lead-form-builder/init.php',
@@ -242,11 +287,12 @@ function blur_theme_option_endpoint_callback() {
                 )
     ),
     'wp_popup_builder' => array(
-        'name' => esc_html__( 'WP Popup Builder – Popup Forms & Newsletter', 'th-shop-mania' ),
+        'name' => esc_html__( 'WP Popup Builder – Popup Forms & Newsletter', 'blur' ),
         'imgUrl' => 'https://ps.w.org/wp-popup-builder/assets/icon-128x128.png',
         'pro_link' => esc_url('https://themehunk.com/wp-popup-builder-pro/'),
         'active_filename' => 'wp-popup-builder/wp-popup-builder.php',
         'slug'=> 'wp-popup-builder',
+        'detail_link' => get_home_url().'/wp-admin/plugin-install.php?tab=plugin-information&amp;plugin=wp-popup-builder&amp;TB_iframe=true&amp;width=772&amp;height=500',
         'pro-plugin' => array(
                  'slug'=>'wp-popup-builder',
                   'init'=>'wp-popup-builder-pro/wp-popup-builder.php',
@@ -254,6 +300,32 @@ function blur_theme_option_endpoint_callback() {
                   'docs'=>esc_url('https://themehunk.com/docs/wp-popup-builder-pro/'),
                 )
     ),
+    'unlimited_blocks' => array(
+      'name' => esc_html__( 'Unlimited blocks For Gutenberg', 'blur' ),
+      'imgUrl' => 'https://ps.w.org/unlimited-blocks/assets/icon-128x128.png',
+      'pro_link' => '',
+      'active_filename' => 'unlimited-blocks/unlimited-blocks.php',
+      'slug'=> 'unlimited-blocks',
+      'detail_link' => get_home_url().'/wp-admin/plugin-install.php?tab=plugin-information&amp;plugin=unlimited-blocks&amp;TB_iframe=true&amp;width=772&amp;height=500',
+     
+    ),
+    'woocommerce' => array(
+      'name' => esc_html__( 'Woocommerce', 'blur' ),
+      'imgUrl' => 'https://ps.w.org/woocommerce/assets/icon-128x128.png',
+      'pro_link' => '',
+      'active_filename' => 'woocommerce/woocommerce.php',
+      'slug'=> 'woocommerce',
+      'detail_link' => get_home_url().'/wp-admin/plugin-install.php?tab=plugin-information&amp;plugin=woocommerce&amp;TB_iframe=true&amp;width=772&amp;height=500',
+     
+    ),
+    'yith_woocommerce_wishlist' => array(
+      'name' => esc_html__( 'YITH WooCommerce Wishlist', 'blur' ),
+      'imgUrl' => 'https://ps.w.org/yith-woocommerce-wishlist/assets/icon-128x128.jpg',
+      'pro_link' => '',
+      'active_filename' => 'yith-woocommerce-wishlist/init.php',
+      'slug'=> 'yith-woocommerce-wishlist',
+      'detail_link' => get_home_url().'/wp-admin/plugin-install.php?tab=plugin-information&amp;plugin=yith-woocommerce-wishlist&amp;TB_iframe=true&amp;width=772&amp;height=500',
+   ),
 
        
     );
