@@ -3,6 +3,7 @@ import { __ } from '@wordpress/i18n';
 import WelcomeContent from './WelcomeContent';
 import HelpContent from './HelpContent';
 import RecommendedContent from './RecommendedContent';
+import FeeProContent from './FeeProContent';
 
 const TabContent = (props) => {
     const [settings, setSettings] = useState({});
@@ -17,31 +18,27 @@ const TabContent = (props) => {
           className={`tab welcome ${activeTab === 'welcome' ? 'active' : ''}`}
           onClick={() => handleTabClick('welcome')}
         >
-          Welcome
+         { __( 'Welcome', 'blur' )}
+          
         </button>
         <button
           className={`tab recommended ${activeTab === 'recommended' ? 'active' : ''}`}
           onClick={() => handleTabClick('recommended')}
         >
-          Recommended Plugin
+          { __( 'Recommended Plugin', 'blur' )}
         </button>
-        <button
-          className={`tab demo ${activeTab === 'demo' ? 'active' : ''}`}
-          onClick={() => handleTabClick('demo')}
-        >
-          Demo Import
-        </button>
+       
         <button
           className={`tab freevspro ${activeTab === 'freevspro' ? 'active' : ''}`}
           onClick={() => handleTabClick('freevspro')}
         >
-          Free Vs Pro
+          { __( 'Free Vs Pro', 'blur' )}
         </button>
         <button
           className={`tab help ${activeTab === 'help' ? 'active' : ''}`}
           onClick={() => handleTabClick('help')}
         >
-          Help
+          { __( 'Help', 'blur' )}
         </button>
       </div>
       <div className="tab-content">
@@ -55,16 +52,10 @@ const TabContent = (props) => {
             <RecommendedContent/>
           </div>
         )}
-        {activeTab === 'demo' && (
-          <div className="demo-tab">
-            <h2>Demo</h2>
-            
-          </div>
-        )}
+       
         {activeTab === 'freevspro' && (
           <div className="freevspro-tab">
-            <h2>freevspro</h2>
-            
+            <FeeProContent/>
           </div>
         )}
         {activeTab === 'help' && (

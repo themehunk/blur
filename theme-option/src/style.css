@@ -209,3 +209,36 @@ max-width:100%;
         border: none;
         width: 128px;
     }
+
+    .freepro-content-box ul {
+        margin: 0 0 2rem 0;
+    }
+    .freepro-content-box .freepro-tbl-heading {
+        position: sticky;
+        top: 50px;
+        color: #435c6d;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 3px;
+        background: #f8fafb;
+        border: 1px solid rgba(226,230,235,.7);
+        box-shadow: 0 2px 5px rgb(143 163 184 / 12%);
+    }
+    .freepro-content-box ul li {
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr;
+        padding: 1rem 1.8rem;
+        font-size: 0.87rem;
+    }
+    
+    .freepro-content-box ul li:not(:first-child) {
+        border-bottom: 1px dashed rgba(226,230,235,.7);
+    }
+    
+    .freepro-content-box ul li span.dashicons-yes {
+        color: #30b335;
+    }
+    
+    .freepro-content-box ul li span.dashicons-no-alt {
+        color: #ef9a9a;
+    }
