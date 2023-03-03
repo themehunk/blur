@@ -191,8 +191,7 @@ const OptionHeader = () => {
     className: "th-logo-img"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     target: "_blank",
-    href: "#",
-    className: ""
+    href: "https://themehunk.com/"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "logo-image"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
@@ -416,6 +415,33 @@ function PluginData() {
     name: data.wp_popup_builder.name,
     imgL: data.wp_popup_builder.imgUrl,
     linkP: data.wp_popup_builder.detail_link,
+    dtlText: detailText
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PluginList, {
+    init: data.wp_popup_builder.active_filename,
+    slug: data.unlimited_blocks.slug,
+    actstatus: wpapi.thwpbl_status.thwpbl_active,
+    inststatus: wpapi.thwpbl_status.thwpbl_instl,
+    name: data.unlimited_blocks.name,
+    imgL: data.unlimited_blocks.imgUrl,
+    linkP: data.unlimited_blocks.detail_link,
+    dtlText: detailText
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PluginList, {
+    init: data.woocommerce.active_filename,
+    slug: data.woocommerce.slug,
+    actstatus: wpapi.woo_status.woo_active,
+    inststatus: wpapi.woo_status.woo_instl,
+    name: data.woocommerce.name,
+    imgL: data.woocommerce.imgUrl,
+    linkP: data.woocommerce.detail_link,
+    dtlText: detailText
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PluginList, {
+    init: data.yith_woocommerce_wishlist.active_filename,
+    slug: data.yith_woocommerce_wishlist.slug,
+    actstatus: wpapi.yithwlst_status.yithwlst_active,
+    inststatus: wpapi.yithwlst_status.yithwlst_instl,
+    name: data.yith_woocommerce_wishlist.name,
+    imgL: data.yith_woocommerce_wishlist.imgUrl,
+    linkP: data.yith_woocommerce_wishlist.detail_link,
     dtlText: detailText
   }))));
 }

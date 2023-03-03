@@ -26,6 +26,10 @@
     margin: 2rem 0;
 }
 
+.th-logo-img img{
+    max-width: 160px;
+}
+
 .th-option-top-hdr .th-col2 {
     padding: 1rem 1.5rem;
     display: flex;
@@ -215,7 +219,7 @@ max-width:100%;
     }
     .freepro-content-box .freepro-tbl-heading {
         position: sticky;
-        top: 50px;
+        top: 32px;
         color: #435c6d;
         font-size: 15px;
         font-weight: 600;
