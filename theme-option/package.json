@@ -42,6 +42,7 @@
     "currency-symbol-map": "^5.0.1",
     "deepmerge": "^4.2.2",
     "hex-rgba": "^1.0.2",
+    "html-react-parser": "^3.0.10",
     "object-hash": "^3.0.0",
     "radium": "^0.26.2",
     "react-sortable-hoc": "^2.0.0",
