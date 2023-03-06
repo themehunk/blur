@@ -278,7 +278,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! html-react-parser */ "./node_modules/html-react-parser/index.mjs");
+/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! html-react-parser */ "./node_modules/html-react-parser/index.js");
+/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(html_react_parser__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
@@ -510,7 +511,7 @@ function PluginData() {
     slug: thaps_activeSlug,
     actstatus: wpapi.thaps_status.thaps_active,
     inststatus: wpapi.thaps_status.thaps_instl,
-    name: (0,html_react_parser__WEBPACK_IMPORTED_MODULE_3__["default"])(thaps_activeName),
+    name: html_react_parser__WEBPACK_IMPORTED_MODULE_3___default()(thaps_activeName),
     imgL: data.th_advance_product_search.imgUrl,
     linkP: thaps_activeDetailLink,
     dtlText: thaps_activeDetail,
@@ -521,7 +522,7 @@ function PluginData() {
     slug: thpc_activeSlug,
     actstatus: wpapi.thpc_status.thpc_active,
     inststatus: wpapi.thpc_status.thpc_instl,
-    name: (0,html_react_parser__WEBPACK_IMPORTED_MODULE_3__["default"])(thpc_activeName),
+    name: html_react_parser__WEBPACK_IMPORTED_MODULE_3___default()(thpc_activeName),
     imgL: data.th_product_compare.imgUrl,
     linkP: thpc_activeDetailLink,
     dtlText: thpc_activeDetail,
@@ -532,7 +533,7 @@ function PluginData() {
     slug: thiowc_activeSlug,
     actstatus: wpapi.thiowc_status.thiowc_active,
     inststatus: wpapi.thiowc_status.thiowc_instl,
-    name: (0,html_react_parser__WEBPACK_IMPORTED_MODULE_3__["default"])(thiowc_activeName),
+    name: html_react_parser__WEBPACK_IMPORTED_MODULE_3___default()(thiowc_activeName),
     imgL: data.th_all_in_one_woo_cart.imgUrl,
     linkP: thiowc_activeDetailLink,
     dtlText: thiowc_activeDetail,
@@ -543,7 +544,7 @@ function PluginData() {
     slug: thvs_activeSlug,
     actstatus: wpapi.thvs_status.thvs_active,
     inststatus: wpapi.thvs_status.thvs_instl,
-    name: (0,html_react_parser__WEBPACK_IMPORTED_MODULE_3__["default"])(thvs_activeName),
+    name: html_react_parser__WEBPACK_IMPORTED_MODULE_3___default()(thvs_activeName),
     imgL: data.th_variation_swatches.imgUrl,
     linkP: thvs_activeDetailLink,
     dtlText: thvs_activeDetail,
@@ -554,7 +555,7 @@ function PluginData() {
     slug: thlf_activeSlug,
     actstatus: wpapi.thlf_status.thlf_active,
     inststatus: wpapi.thlf_status.thlf_instl,
-    name: (0,html_react_parser__WEBPACK_IMPORTED_MODULE_3__["default"])(thlf_activeName),
+    name: html_react_parser__WEBPACK_IMPORTED_MODULE_3___default()(thlf_activeName),
     imgL: data.lead_form_builder.imgUrl,
     linkP: thlf_activeDetailLink,
     dtlText: thlf_activeDetail,
@@ -565,7 +566,7 @@ function PluginData() {
     slug: thwpbl_activeSlug,
     actstatus: wpapi.thwpbl_status.thwpbl_active,
     inststatus: wpapi.thwpbl_status.thwpbl_instl,
-    name: (0,html_react_parser__WEBPACK_IMPORTED_MODULE_3__["default"])(thwpbl_activeName),
+    name: html_react_parser__WEBPACK_IMPORTED_MODULE_3___default()(thwpbl_activeName),
     imgL: data.wp_popup_builder.imgUrl,
     linkP: thwpbl_activeDetailLink,
     dtlText: thwpbl_activeDetail,
@@ -4353,41 +4354,6 @@ module.exports = window["wp"]["element"];
 
 "use strict";
 module.exports = window["wp"]["i18n"];
-
-/***/ }),
-
-/***/ "./node_modules/html-react-parser/index.mjs":
-/*!**************************************************!*\
-  !*** ./node_modules/html-react-parser/index.mjs ***!
-  \**************************************************/
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Comment": function() { return /* binding */ Comment; },
-/* harmony export */   "Element": function() { return /* binding */ Element; },
-/* harmony export */   "ProcessingInstruction": function() { return /* binding */ ProcessingInstruction; },
-/* harmony export */   "Text": function() { return /* binding */ Text; },
-/* harmony export */   "attributesToProps": function() { return /* binding */ attributesToProps; },
-/* harmony export */   "domToReact": function() { return /* binding */ domToReact; },
-/* harmony export */   "htmlToDOM": function() { return /* binding */ htmlToDOM; }
-/* harmony export */ });
-/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ "./node_modules/html-react-parser/index.js");
-
-
-var domToReact = _index_js__WEBPACK_IMPORTED_MODULE_0__.domToReact;
-var htmlToDOM = _index_js__WEBPACK_IMPORTED_MODULE_0__.htmlToDOM;
-var attributesToProps = _index_js__WEBPACK_IMPORTED_MODULE_0__.attributesToProps;
-
-// domhandler
-var Comment = _index_js__WEBPACK_IMPORTED_MODULE_0__.Comment;
-var Element = _index_js__WEBPACK_IMPORTED_MODULE_0__.Element;
-var ProcessingInstruction = _index_js__WEBPACK_IMPORTED_MODULE_0__.ProcessingInstruction;
-var Text = _index_js__WEBPACK_IMPORTED_MODULE_0__.Text;
-
-/* harmony default export */ __webpack_exports__["default"] = (_index_js__WEBPACK_IMPORTED_MODULE_0__);
-
 
 /***/ })
 
