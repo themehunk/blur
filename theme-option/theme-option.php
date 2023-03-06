@@ -35,38 +35,80 @@ class Blur_theme_option{
    
    function blur_enqueue_scripts() {
     
-    if(is_plugin_active('th-all-in-one-woo-cart/th-all-in-one-woo-cart.php')){
+    if(is_plugin_active('th-all-in-one-woo-cart/th-all-in-one-woo-cart.php') && !is_plugin_active('th-all-in-one-woo-cart-pro/th-all-in-one-woo-cart-pro.php')){
+      $thiowc_active = false; 
+    }elseif(!is_plugin_active('th-all-in-one-woo-cart/th-all-in-one-woo-cart.php') && is_plugin_active('th-all-in-one-woo-cart-pro/th-all-in-one-woo-cart-pro.php')){
+      $thiowc_active = true; 
+    }elseif(is_plugin_active('th-all-in-one-woo-cart/th-all-in-one-woo-cart.php')){
+      $thiowc_active = true; 
+    }elseif(is_plugin_active('th-all-in-one-woo-cart-pro/th-all-in-one-woo-cart-pro.php')){
       $thiowc_active = true; 
     }else{
       $thiowc_active = false;
     }
 
-    if(is_plugin_active('th-advance-product-search/th-advance-product-search.php')){
+    if(is_plugin_active('th-advance-product-search/th-advance-product-search.php') && !is_plugin_active('th-advance-product-search-pro/th-advance-product-search-pro.php')){
+      $thaps_active = false; 
+    }elseif(!is_plugin_active('th-advance-product-search/th-advance-product-search.php') && is_plugin_active('th-advance-product-search-pro/th-advance-product-search-pro.php')){
+      $thaps_active = true; 
+    }elseif(is_plugin_active('th-advance-product-search/th-advance-product-search.php')){
+      $thaps_active = true; 
+    }elseif(is_plugin_active('th-advance-product-search-pro/th-advance-product-search-pro.php')){
       $thaps_active = true; 
     }else{
       $thaps_active = false;
     }
 
-    if(is_plugin_active('th-product-compare/th-product-compare.php')){
+    if(is_plugin_active('th-product-compare/th-product-compare.php') && !is_plugin_active('th-product-compare-pro/th-product-compare-pro.php')){
+      $thpc_active = false; 
+    }elseif(!is_plugin_active('th-product-compare/th-product-compare.php') && is_plugin_active('th-product-compare-pro/th-product-compare-pro.php')){
+      $thpc_active = true; 
+    }elseif(is_plugin_active('th-product-compare/th-product-compare.php')){
+      $thpc_active = true; 
+    }elseif(is_plugin_active('th-product-compare-pro/th-product-compare-pro.php')){
       $thpc_active = true; 
     }else{
       $thpc_active = false;
     }
-    if(is_plugin_active('th-variation-swatches/th-variation-swatches.php')){
+
+    if(is_plugin_active('th-variation-swatches/th-variation-swatches.php') && !is_plugin_active('th-variation-swatches-pro/th-variation-swatches-pro.php')){
+      $thvs_active = false; 
+    }elseif(!is_plugin_active('th-variation-swatches/th-variation-swatches.php') && is_plugin_active('th-variation-swatches-pro/th-variation-swatches-pro.php')){
+      $thvs_active = true; 
+    }elseif(is_plugin_active('th-variation-swatches/th-variation-swatches.php')){
+      $thvs_active = true; 
+    }elseif(is_plugin_active('th-variation-swatches-pro/th-variation-swatches-pro.php')){
       $thvs_active = true; 
     }else{
       $thvs_active = false;
     }
-    if(is_plugin_active('lead-form-builder/lead-form-builder.php')){
+
+    if(is_plugin_active('lead-form-builder/lead-form-builder.php') && !is_plugin_active('lead-form-builder-pro/lead-form-builder-pro.php')){
+      $thlf_active = false; 
+    }elseif(!is_plugin_active('lead-form-builder/lead-form-builder.php') && is_plugin_active('lead-form-builder-pro/lead-form-builder-pro.php')){
+      $thlf_active = true; 
+    }elseif(is_plugin_active('lead-form-builder/lead-form-builder.php')){
+      $thlf_active = true; 
+    }elseif(is_plugin_active('lead-form-builder-pro/lead-form-builder-pro.php')){
       $thlf_active = true; 
     }else{
       $thlf_active = false;
     }
-    if(is_plugin_active('wp-popup-builder/wp-popup-builder.php')){
+
+
+    if(is_plugin_active('wp-popup-builder/wp-popup-builder.php') && !is_plugin_active('wp-popup-builder-pro/wp-popup-builder-pro.php')){
+      $thwpbl_active = false; 
+    }elseif(!is_plugin_active('wp-popup-builder/wp-popup-builder.php') && is_plugin_active('wp-popup-builder-pro/wp-popup-builder-pro.php')){
+      $thwpbl_active = true; 
+    }elseif(is_plugin_active('wp-popup-builder/wp-popup-builder.php')){
+      $thwpbl_active = true; 
+    }elseif(is_plugin_active('wp-popup-builder-pro/wp-popup-builder-pro.php')){
       $thwpbl_active = true; 
     }else{
       $thwpbl_active = false;
     }
+
+  
     if(is_plugin_active('unlimited_blocks/unlimited_blocks.php')){
       $thulb_active = true; 
     }else{
@@ -83,35 +125,37 @@ class Blur_theme_option{
       $yithwlst_active = false;
     }
 
-    if(is_dir( WP_PLUGIN_DIR . '/th-all-in-one-woo-cart' )){
+    if(is_dir( WP_PLUGIN_DIR . '/th-all-in-one-woo-cart' ) || is_dir( WP_PLUGIN_DIR . '/th-all-in-one-woo-cart-pro' )){
       $thiowc_instl = 'installed'; 
     }else{
       $thiowc_instl = 'install-now';
     }
 
-    if(is_dir( WP_PLUGIN_DIR . '/th-advance-product-search' )){
+    if(is_dir( WP_PLUGIN_DIR . '/th-advance-product-search' ) || is_dir( WP_PLUGIN_DIR . '/th-advance-product-search-pro' )){
       $thaps_instl = 'installed'; 
     }else{
       $thaps_instl = 'install-now';
     }
-    if(is_dir( WP_PLUGIN_DIR . '/th-product-compare' )){
+
+    if(is_dir( WP_PLUGIN_DIR . '/th-product-compare' ) || is_dir( WP_PLUGIN_DIR . '/th-product-compare-pro' )){
       $thpc_instl = 'installed'; 
     }else{
       $thpc_instl = 'install-now';
     }
-    if(is_dir( WP_PLUGIN_DIR . '/th-variation-swatches' )){
+
+    if(is_dir( WP_PLUGIN_DIR . '/th-variation-swatches' ) || is_dir( WP_PLUGIN_DIR . '/th-variation-swatches-pro' )){
       $thvs_instl = 'installed'; 
     }else{
       $thvs_instl = 'install-now';
     }
 
-    if(is_dir( WP_PLUGIN_DIR . '/lead-form-builder' )){
+    if(is_dir( WP_PLUGIN_DIR . '/lead-form-builder' ) || is_dir( WP_PLUGIN_DIR . '/lead-form-builder-pro' )){
       $thlf_instl = 'installed'; 
     }else{
       $thlf_instl = 'install-now';
     }
 
-    if(is_dir( WP_PLUGIN_DIR . '/wp-popup-builder' )){
+    if(is_dir( WP_PLUGIN_DIR . '/wp-popup-builder' )|| is_dir( WP_PLUGIN_DIR . '/wp-popup-builder-pro' )){
       $thwpbl_instl = 'installed'; 
     }else{
       $thwpbl_instl = 'install-now';
@@ -133,6 +177,117 @@ class Blur_theme_option{
       $yithwlst_instl = 'install-now';
     }
 
+
+    // for pro plugin
+
+    if(is_dir( WP_PLUGIN_DIR . '/th-product-compare-pro' )){
+
+      if(!is_plugin_active('th-product-compare/th-product-compare.php') || !is_plugin_active('th-product-compare-pro/th-product-compare-pro.php')){
+        
+        $thpc_proActivate = 'pro-activate';
+
+      }elseif(is_plugin_active('th-product-compare/th-product-compare.php') || !is_plugin_active('th-product-compare-pro/th-product-compare-pro.php')){
+        
+        $thpc_proActivate = 'pro-activate';
+
+      }
+
+    }else{
+        
+        $thpc_proActivate = '';
+
+      }
+
+      if(is_dir( WP_PLUGIN_DIR . '/th-advance-product-search-pro' )){
+
+        if(!is_plugin_active('th-advance-product-search/th-advance-product-search.php') || !is_plugin_active('th-advance-product-search-pro/th-advance-product-search-pro.php')){
+          
+          $thaps_proActivate = 'pro-activate';
+  
+        }elseif(is_plugin_active('th-advance-product-search/th-advance-product-search.php') || !is_plugin_active('th-advance-product-search-pro/th-advance-product-search-pro.php')){
+          
+          $thaps_proActivate = 'pro-activate';
+  
+        }
+  
+      }else{
+          
+          $thaps_proActivate = '';
+  
+        }
+
+        if(is_dir( WP_PLUGIN_DIR . '/th-all-in-one-woo-cart-pro' )){
+
+          if(!is_plugin_active('th-all-in-one-woo-cart/th-all-in-one-woo-cart.php') || !is_plugin_active('th-all-in-one-woo-cart-pro/th-all-in-one-woo-cart-pro.php')){
+            
+            $thiowc_proActivate = 'pro-activate';
+    
+          }elseif(is_plugin_active('th-all-in-one-woo-cart/th-all-in-one-woo-cart.php') || !is_plugin_active('th-all-in-one-woo-cart-pro/th-all-in-one-woo-cart-pro.php')){
+            
+            $thiowc_proActivate = 'pro-activate';
+    
+          }
+    
+        }else{
+            
+            $thiowc_proActivate = '';
+    
+          }
+
+          if(is_dir( WP_PLUGIN_DIR . '/th-variation-swatches-pro' )){
+
+            if(!is_plugin_active('th-variation-swatches/th-variation-swatches.php') || !is_plugin_active('th-variation-swatches-pro/th-variation-swatches-pro.php')){
+              
+              $thvs_proActivate = 'pro-activate';
+      
+            }elseif(is_plugin_active('th-variation-swatches/th-variation-swatches.php') || !is_plugin_active('th-variation-swatches-pro/th-variation-swatches-pro.php')){
+              
+              $thvs_proActivate = 'pro-activate';
+      
+            }
+      
+          }else{
+              
+              $thvs_proActivate = '';
+      
+            }
+
+            if(is_dir( WP_PLUGIN_DIR . '/lead-form-builder-pro' )){
+
+              if(!is_plugin_active('lead-form-builder/lead-form-builder.php') || !is_plugin_active('lead-form-builder-pro/lead-form-builder-pro.php')){
+                
+                $thlf_proActivate = 'pro-activate';
+        
+              }elseif(is_plugin_active('lead-form-builder/lead-form-builder.php') || !is_plugin_active('lead-form-builder-pro/lead-form-builder-pro.php')){
+                
+                $thlf_proActivate = 'pro-activate';
+        
+              }
+        
+            }else{
+                
+                $thlf_proActivate = '';
+        
+              }
+
+              if(is_dir( WP_PLUGIN_DIR . '/wp-popup-builder-pro' )){
+
+                if(!is_plugin_active('wp-popup-builder/wp-popup-builder.php') || !is_plugin_active('wp-popup-builder-pro/wp-popup-builder-pro.php')){
+                  
+                  $thwpbl_proActivate = 'pro-activate';
+          
+                }elseif(is_plugin_active('wp-popup-builder/wp-popup-builder.php') || !is_plugin_active('wp-popup-builder-pro/wp-popup-builder-pro.php')){
+                  
+                  $thwpbl_proActivate = 'pro-activate';
+          
+                }
+          
+              }else{
+                  
+                  $thwpbl_proActivate = '';
+          
+                }
+
     
     wp_enqueue_style( 'blur-settings-css', get_template_directory_uri() . '/theme-option/build/style-index.css', array(), '1.0.0', false );
 
@@ -149,26 +304,32 @@ class Blur_theme_option{
           'thiowc_status' => array(
              'thiowc_instl' => $thiowc_instl,
              'thiowc_active' => $thiowc_active,
+             'thiowc_pro_active' => $thiowc_proActivate,
            ),
            'thaps_status' => array(
             'thaps_instl' => $thaps_instl,
             'thaps_active' => $thaps_active,
+            'thaps_pro_active' => $thaps_proActivate,
           ),
           'thpc_status' => array(
             'thpc_instl' => $thpc_instl,
             'thpc_active' => $thpc_active,
+            'thpc_pro_active' => $thpc_proActivate,
           ),
           'thvs_status' => array(
             'thvs_instl' => $thvs_instl,
             'thvs_active' => $thvs_active,
+            'thvs_pro_active' => $thvs_proActivate,
           ),
           'thlf_status' => array(
             'thlf_instl' => $thlf_instl,
             'thlf_active' => $thlf_active,
+            'thlf_pro_active' => $thlf_proActivate,
           ),
           'thwpbl_status' => array(
             'thwpbl_instl' => $thwpbl_instl,
             'thwpbl_active' => $thwpbl_active,
+            'thwpbl_pro_active' => $thwpbl_proActivate,
           ),
           'thulb_status' => array(
             'thulb_instl' => $thulb_instl,
@@ -220,12 +381,12 @@ function blur_theme_option_endpoint_callback() {
            'active_filename' => 'th-all-in-one-woo-cart/th-all-in-one-woo-cart.php',
            'slug'=> 'th-all-in-one-woo-cart',
            'detail_link' => get_home_url().'/wp-admin/plugin-install.php?tab=plugin-information&amp;plugin=th-all-in-one-woo-cart&amp;TB_iframe=true&amp;width=772&amp;height=500',
-           'pro-plugin' => array(
+           'pro_plugin' => array(
                                'slug'=>'th-all-in-one-woo-cart-pro',
                                'init'=>'th-all-in-one-woo-cart-pro/th-all-in-one-woo-cart-pro.php',
                                'admin_link'=>'th-all-in-one-woo-cart-pro',
                                'docs'=>esc_url('https://themehunk.com/docs/th-all-in-one-woo-cart/'),
-    
+                               'prolink'=>esc_url('https://themehunk.com/th-all-in-one-woo-cart/'),
                                )
            ),
            'th_advance_product_search' => array(
@@ -235,12 +396,12 @@ function blur_theme_option_endpoint_callback() {
             'active_filename' => 'th-advance-product-search/th-advance-product-search.php',
             'slug'=> 'th-advance-product-search',
             'detail_link' => get_home_url().'/wp-admin/plugin-install.php?tab=plugin-information&amp;plugin=th-advance-product-searchs&amp;TB_iframe=true&amp;width=772&amp;height=500',
-            'pro-plugin' => array(
+            'pro_plugin' => array(
                        'slug'=>'th-advance-product-search-pro',
                        'init'=>'th-advance-product-search-pro/th-advance-product-search-pro.php',
                        'admin_link'=>'th-advance-product-search-pro',
                        'docs'=>esc_url('https://themehunk.com/docs/th-advance-product-search/'),
-
+                       'prolink'=>esc_url('https://themehunk.com/th-advance-product-search/'),
                     )
         ),
         'th_product_compare' => array(
@@ -250,11 +411,12 @@ function blur_theme_option_endpoint_callback() {
           'active_filename' => 'th-product-compare/th-product-compare.php',
           'slug'=> 'th-product-compare',
           'detail_link' => get_home_url().'/wp-admin/plugin-install.php?tab=plugin-information&amp;plugin=th-product-compare&amp;TB_iframe=true&amp;width=772&amp;height=500',
-          'pro-plugin' => array(
+          'pro_plugin' => array(
                      'slug'=>'th-product-compare-pro',
                      'init'=>'th-product-compare-pro/th-product-compare-pro.php',
                      'admin_link'=>'th-product-compare-pro',
                      'docs'=>esc_url('https://themehunk.com/docs/th-product-compare/'),
+                     'prolink'=>esc_url('https://themehunk.com/th-product-compare/'),
 
                   )
       ),
@@ -265,11 +427,12 @@ function blur_theme_option_endpoint_callback() {
         'active_filename' => 'th-variation-swatches/th-variation-swatches.php',
         'slug'=> 'th-variation-swatches',
         'detail_link' => get_home_url().'/wp-admin/plugin-install.php?tab=plugin-information&amp;plugin=th-variation-swatches&amp;TB_iframe=true&amp;width=772&amp;height=500',
-        'pro-plugin' => array(
+        'pro_plugin' => array(
                   'slug'=>'th-variation-swatches',
                   'init'=>'th-variation-swatches-pro/th-variation-swatches-pro.php',
                    'admin_link'=>'th-variation-swatches',
                    'docs'=>esc_url('https://themehunk.com/docs/th-variation-swatches-plugin/'),
+                   'prolink'=>esc_url('https://themehunk.com/th-variation-swatches/'),
                 )
       ), 
       'lead_form_builder' => array(
@@ -279,11 +442,12 @@ function blur_theme_option_endpoint_callback() {
         'active_filename' => 'lead-form-builder/lead-form-builder.php',
         'slug'=> 'lead-form-builder',
         'detail_link' => get_home_url().'/wp-admin/plugin-install.php?tab=plugin-information&amp;plugin=lead-form-builder&amp;TB_iframe=true&amp;width=772&amp;height=500',
-        'pro-plugin' => array(
+        'pro_plugin' => array(
                  'slug'=>'lead-form-builder',
                   'init'=>'lead-form-builder/init.php',
                     'admin_link'=>'wplf-plugin-menu',
                     'docs'=>esc_url('https://themehunk.com/docs/lead-form-builder-pro/'),
+                    'prolink'=>esc_url('https://themehunk.com/lead-form-builder/'),
                 )
     ),
     'wp_popup_builder' => array(
@@ -293,11 +457,12 @@ function blur_theme_option_endpoint_callback() {
         'active_filename' => 'wp-popup-builder/wp-popup-builder.php',
         'slug'=> 'wp-popup-builder',
         'detail_link' => get_home_url().'/wp-admin/plugin-install.php?tab=plugin-information&amp;plugin=wp-popup-builder&amp;TB_iframe=true&amp;width=772&amp;height=500',
-        'pro-plugin' => array(
+        'pro_plugin' => array(
                  'slug'=>'wp-popup-builder',
                   'init'=>'wp-popup-builder-pro/wp-popup-builder.php',
                   'admin_link'=>'wppb',
                   'docs'=>esc_url('https://themehunk.com/docs/wp-popup-builder-pro/'),
+                  'prolink'=>esc_url('https://themehunk.com/wp-popup-builder/'),
                 )
     ),
     'unlimited_blocks' => array(
