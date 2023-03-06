@@ -18,11 +18,11 @@ const OptionHeader = () => {
            <div className="th-option-top-hdr">
               <div className="th-col2">
                     <div className="th-option-heading">
-                       <h2>{__( 'Welcome To Blur Theme', 'blur' )}</h2>
-                       <p>{__( 'Blur Theme is a Free WooCommerce theme for creating clean and professional shopping stores', 'blur' )}</p>
+                       <h2>{sprintf(__( 'Welcome To %s Theme', 'blur' ), wpapi.themeName)}</h2>
+                       <p>{wpapi.themeName} {__( 'Theme is a Free WooCommerce theme for creating clean and professional shopping stores', 'blur' )}</p>
                     </div>
                     <div className="th-option-detail">
-                        <p className="th-version">{__( 'Version 1.2.6', 'blur' )}</p>
+                        <p className="th-version">{__( 'Version ', 'blur' )} {wpapi.themeVersion} </p>
                         <span>{__( 'Free', 'blur' )}</span>
                     </div>
               </div>

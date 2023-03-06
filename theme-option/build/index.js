@@ -208,11 +208,11 @@ const OptionHeader = () => {
     className: "th-col2"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "th-option-heading"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Welcome To Blur Theme', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Blur Theme is a Free WooCommerce theme for creating clean and professional shopping stores', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, sprintf((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Welcome To %s Theme', 'blur'), wpapi.themeName)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, wpapi.themeName, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Theme is a Free WooCommerce theme for creating clean and professional shopping stores', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "th-option-detail"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "th-version"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Version 1.2.6', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Free', 'blur'))))))));
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Version ', 'blur'), " ", wpapi.themeVersion, " "), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Free', 'blur'))))))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (OptionHeader);
 
