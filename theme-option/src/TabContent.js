@@ -29,12 +29,6 @@ const TabContent = (props) => {
         </button>
        
         <button
-          className={`tab freevspro ${activeTab === 'freevspro' ? 'active' : ''}`}
-          onClick={() => handleTabClick('freevspro')}
-        >
-          { __( 'Free Vs Pro', 'blur' )}
-        </button>
-        <button
           className={`tab help ${activeTab === 'help' ? 'active' : ''}`}
           onClick={() => handleTabClick('help')}
         >
