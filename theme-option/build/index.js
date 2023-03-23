@@ -120,24 +120,28 @@ const HelpContent = () => {
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-box"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Contact Support', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('If you need any help you can contact to our support team', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: "#",
-    className: "content-link "
+    href: "https://themehunk.com/contact-us/",
+    className: "content-link",
+    target: "_blank"
   }, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Need help ?', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-box"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Documentation', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Our WordPress Theme is well documented, you can go with our documentation and learn to customize Big Store.', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: "#",
-    className: "content-link "
+    href: "https://themehunk.com/docs/",
+    className: "content-link",
+    target: "_blank"
   }, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Go to Doc', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-box"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Create a child theme', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Before modifying theme core files. You should create child theme to make those changes update proof. Please follow this link to create child theme.', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: "#",
-    className: "content-link "
+    href: "https://themehunk.com/child-theme/",
+    className: "content-link ",
+    target: "_blank"
   }, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Create Child Theme', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-box"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Join Group', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Join the community of friendly ThemeHunk users. Get connected, share opinion, ask questions and help each other !', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: "#",
-    className: "content-link button"
-  }, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Join Our Facebook Group', 'blur')))));
+    href: "https://linktr.ee/themehunk",
+    className: "content-link button",
+    target: "_blank"
+  }, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Join Our Social Group', 'blur')))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (HelpContent);
 
@@ -278,8 +282,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! html-react-parser */ "./node_modules/html-react-parser/index.js");
-/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(html_react_parser__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var html_react_parser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! html-react-parser */ "./node_modules/html-react-parser/index.mjs");
 
 
 
@@ -511,7 +514,7 @@ function PluginData() {
     slug: thaps_activeSlug,
     actstatus: wpapi.thaps_status.thaps_active,
     inststatus: wpapi.thaps_status.thaps_instl,
-    name: html_react_parser__WEBPACK_IMPORTED_MODULE_3___default()(thaps_activeName),
+    name: (0,html_react_parser__WEBPACK_IMPORTED_MODULE_3__["default"])(thaps_activeName),
     imgL: data.th_advance_product_search.imgUrl,
     linkP: thaps_activeDetailLink,
     dtlText: thaps_activeDetail,
@@ -522,7 +525,7 @@ function PluginData() {
     slug: thpc_activeSlug,
     actstatus: wpapi.thpc_status.thpc_active,
     inststatus: wpapi.thpc_status.thpc_instl,
-    name: html_react_parser__WEBPACK_IMPORTED_MODULE_3___default()(thpc_activeName),
+    name: (0,html_react_parser__WEBPACK_IMPORTED_MODULE_3__["default"])(thpc_activeName),
     imgL: data.th_product_compare.imgUrl,
     linkP: thpc_activeDetailLink,
     dtlText: thpc_activeDetail,
@@ -533,7 +536,7 @@ function PluginData() {
     slug: thiowc_activeSlug,
     actstatus: wpapi.thiowc_status.thiowc_active,
     inststatus: wpapi.thiowc_status.thiowc_instl,
-    name: html_react_parser__WEBPACK_IMPORTED_MODULE_3___default()(thiowc_activeName),
+    name: (0,html_react_parser__WEBPACK_IMPORTED_MODULE_3__["default"])(thiowc_activeName),
     imgL: data.th_all_in_one_woo_cart.imgUrl,
     linkP: thiowc_activeDetailLink,
     dtlText: thiowc_activeDetail,
@@ -544,7 +547,7 @@ function PluginData() {
     slug: thvs_activeSlug,
     actstatus: wpapi.thvs_status.thvs_active,
     inststatus: wpapi.thvs_status.thvs_instl,
-    name: html_react_parser__WEBPACK_IMPORTED_MODULE_3___default()(thvs_activeName),
+    name: (0,html_react_parser__WEBPACK_IMPORTED_MODULE_3__["default"])(thvs_activeName),
     imgL: data.th_variation_swatches.imgUrl,
     linkP: thvs_activeDetailLink,
     dtlText: thvs_activeDetail,
@@ -555,7 +558,7 @@ function PluginData() {
     slug: thlf_activeSlug,
     actstatus: wpapi.thlf_status.thlf_active,
     inststatus: wpapi.thlf_status.thlf_instl,
-    name: html_react_parser__WEBPACK_IMPORTED_MODULE_3___default()(thlf_activeName),
+    name: (0,html_react_parser__WEBPACK_IMPORTED_MODULE_3__["default"])(thlf_activeName),
     imgL: data.lead_form_builder.imgUrl,
     linkP: thlf_activeDetailLink,
     dtlText: thlf_activeDetail,
@@ -566,7 +569,7 @@ function PluginData() {
     slug: thwpbl_activeSlug,
     actstatus: wpapi.thwpbl_status.thwpbl_active,
     inststatus: wpapi.thwpbl_status.thwpbl_instl,
-    name: html_react_parser__WEBPACK_IMPORTED_MODULE_3___default()(thwpbl_activeName),
+    name: (0,html_react_parser__WEBPACK_IMPORTED_MODULE_3__["default"])(thwpbl_activeName),
     imgL: data.wp_popup_builder.imgUrl,
     linkP: thwpbl_activeDetailLink,
     dtlText: thwpbl_activeDetail,
@@ -649,29 +652,33 @@ const SidebarContent = () => {
     className: "sidebar-option-content-wrp"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-box"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Big Store Premium Theme', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('If you like the free version of this theme, you will LOVE the full version of Big Store which includes numerous Advanced features, Custom Sections, Section Ordering and more useful options to customize your website.', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: "#",
-    className: "content-link button"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Blur Premium Theme', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('You’re using the free version of the Blur Theme with limited features and functionality. You can upgrade to Blur Pro Theme for Advanced features, Custom Sections, and more useful options to customize your website easily.', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: "https://themehunk.com/pro-wordpress-themes/",
+    className: "content-link button",
+    target: "_blank"
   }, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Upgrade To Pro', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("hr", null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-box"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Why Upgrade?', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Upgrading to Big Store Premium you will unlock dozen of unique features that will take your website to the next level. See the Comparison table for more details.', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: "#",
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Why Upgrade?', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Upgrading to Blur Premium you will unlock dozen of unique features that will take your website to the next level. See the Comparison table for more details.', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: "https://themehunk.com/pro-wordpress-themes/",
     className: "content-link button"
   }, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Pro Demo', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("hr", null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-box"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Leave us a review', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('We would love to hear your feedback.', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: "#",
-    className: "content-link"
+    href: "https://wordpress.org/support/theme/blur/reviews/#new-post",
+    className: "content-link",
+    target: "_blank"
   }, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Submit review', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("hr", null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-box"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Video Tutorials', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Want a guide? We have video tutorials to walk you through getting started.', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: "#",
-    className: "content-link"
+    href: "https://www.youtube.com/@ThemeHunk/featured",
+    className: "content-link",
+    target: "_blank"
   }, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Watch Videos', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("hr", null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content-box"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Support', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Have a question, we are happy to help! Get in touch with our support team.', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: "#",
-    className: "content-link"
+    href: "https://themehunk.com/contact-us/",
+    className: "content-link",
+    target: "_blank"
   }, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Submit a Ticket', 'blur')))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (SidebarContent);
@@ -780,26 +787,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const WelcomeContent = () => {
+  let url_customize = `${wpapi.homeUrl}/wp-admin/site-editor.php`;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "option-content-wrp"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-box"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('1. Install Recommended Plugins', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('We highly Recommend to install ThemeHunk Customizer plugin to get all customization options in Big Store theme. Also install recommended plugins available in recommended tab.', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-box"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('2. Setup Home Page', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('To set up the HomePage in Big Store theme, Just follow the below given Instructions.', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Go to Wp Dashboard > Pages > Add New > Create a Page using “Home Page Template” available in Page attribute.', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Now go to Settings > Reading > Your homepage displays > A static page (select below) and set that page as your homepage.', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: "#",
-    className: "content-link button"
-  }, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Go to Doc', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-box"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('3. Customize Your Website', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Big Store theme support live customizer for home page set up. Everything visible at home page can be changed through customize panel', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: "#",
-    className: "content-link button"
-  }, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Start Customize', 'blur'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "content-box"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('4. Customizer Links', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Big Store theme support live customizer for home page set up. Everything visible at home page can be changed through customize panel', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    href: "#",
-    className: "content-link button"
-  }, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Start Customize', 'blur')))));
+    className: "content-box-full"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Welcome to Blur', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Create beautiful website using Blur Full Site Editing Theme. It allows you to customize your site, including individual blocks, as much as you’d like with different colors, typography, layouts, and more.', 'blur')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: url_customize,
+    class: "content-link button"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Start Customizing Blur', 'blur')))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (WelcomeContent);
 
@@ -4354,6 +4350,41 @@ module.exports = window["wp"]["element"];
 
 "use strict";
 module.exports = window["wp"]["i18n"];
+
+/***/ }),
+
+/***/ "./node_modules/html-react-parser/index.mjs":
+/*!**************************************************!*\
+  !*** ./node_modules/html-react-parser/index.mjs ***!
+  \**************************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Comment": function() { return /* binding */ Comment; },
+/* harmony export */   "Element": function() { return /* binding */ Element; },
+/* harmony export */   "ProcessingInstruction": function() { return /* binding */ ProcessingInstruction; },
+/* harmony export */   "Text": function() { return /* binding */ Text; },
+/* harmony export */   "attributesToProps": function() { return /* binding */ attributesToProps; },
+/* harmony export */   "domToReact": function() { return /* binding */ domToReact; },
+/* harmony export */   "htmlToDOM": function() { return /* binding */ htmlToDOM; }
+/* harmony export */ });
+/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ "./node_modules/html-react-parser/index.js");
+
+
+var domToReact = _index_js__WEBPACK_IMPORTED_MODULE_0__.domToReact;
+var htmlToDOM = _index_js__WEBPACK_IMPORTED_MODULE_0__.htmlToDOM;
+var attributesToProps = _index_js__WEBPACK_IMPORTED_MODULE_0__.attributesToProps;
+
+// domhandler
+var Comment = _index_js__WEBPACK_IMPORTED_MODULE_0__.Comment;
+var Element = _index_js__WEBPACK_IMPORTED_MODULE_0__.Element;
+var ProcessingInstruction = _index_js__WEBPACK_IMPORTED_MODULE_0__.ProcessingInstruction;
+var Text = _index_js__WEBPACK_IMPORTED_MODULE_0__.Text;
+
+/* harmony default export */ __webpack_exports__["default"] = (_index_js__WEBPACK_IMPORTED_MODULE_0__);
+
 
 /***/ })
 

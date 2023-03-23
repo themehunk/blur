@@ -271,5 +271,9 @@ max-width:100%;
         border-color: #4570e3;
         color: #ffffff;
     }
+    .option-content-wrp .content-box p, .option-content-wrp .content-box-full p {
+        line-height: 1.5;
+        font-size: 1rem;
+    }
 
 /*# sourceMappingURL=style-index.css.map*/
