@@ -7,8 +7,8 @@ const SidebarContent = () => {
             <div className="sidebar-option-content-wrp">
                <div className="content-box">
                 <h3> {__( 'ThemeHunk Premium Themes', 'blur' )}</h3>
-                <p>{__( 'You’re using the free version of the Blur Theme with limited features and functionality. You can upgrade to Pro Theme for Advanced features, Custom Sections, and more useful options to customize your website easily.', 'blur' )}</p>
-                <a href="https://themehunk.com/pro-wordpress-themes/" className="content-link button" target="_blank"> {__( 'Upgrade To Pro', 'blur' )}</a>
+                <p>{__( 'ThemeHunk specializes in creating premium WordPress themes and plugins. We offer extensive documentation, video tutorials, and a dedicated support team to help users with any questions or issues they may encounter.', 'blur' )}</p>
+                <a href="https://themehunk.com/pro-wordpress-themes/" className="content-link button" target="_blank"> {__( 'View Premium Themes', 'blur' )}</a>
                </div>
                <hr></hr>
                <div className="content-box">
