@@ -22,7 +22,7 @@ Demo: https://themehunk.com/Blur/
 
 == Changelog ==
 = 1.0.8 =
-* Option Panel Issue Fixed.
+* Fix: Option Panel Issue resolved.
 
 = 1.0.7 =
 * register_rest_route error resolved.
