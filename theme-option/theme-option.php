@@ -33,7 +33,9 @@ class Blur_theme_option{
    
   }
    
-   function blur_enqueue_scripts() {
+   function blur_enqueue_scripts($hook_suffix) {
+
+    if($hook_suffix == 'appearance_page_blur_thunk_started') {
     
     wp_enqueue_style( 'blur-settings-css', get_template_directory_uri() . '/theme-option/build/style-index.css', array(), '1.0.0', false );
 
@@ -51,6 +53,7 @@ class Blur_theme_option{
           'themeVersion' =>  wp_get_theme()->get( 'Version' ),
         )
     );
+   }
    }
 
    function blur_settings_page() {
