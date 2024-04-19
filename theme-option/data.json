@@ -15,7 +15,7 @@
   },
   "woocommerce": {
     "name": "Woocommerce",
-    "imgUrl": "https://ps.w.org/woocommerce/assets/icon-128x128.png",
+    "imgUrl": "https://ps.w.org/woocommerce/assets/icon-128x128.gif",
     "link": "",
     "init": "woocommerce",
     "proInit":""
@@ -44,7 +44,7 @@
   },
   "th-all-in-one-woo-cart": {
     "name": "Th All In One Woo Cart",
-    "imgUrl": "https://ps.w.org/th-all-in-one-woo-cart/assets/icon-128x128.png",
+    "imgUrl": "https://ps.w.org/th-all-in-one-woo-cart/assets/icon-128x128.gif",
     "link": "https://themehunk.com/th-product-compare/",
     "init": "th-all-in-one-woo-cart",
     "proInit":"th-all-in-one-woo-cart-pro/th-all-in-one-woo-cart-pro"
