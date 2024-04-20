@@ -2,8 +2,8 @@
 Contributors: themehunk
 Tags: grid-layout, one-column, wide-blocks, block-patterns, block-styles, custom-menu, editor-style, full-site-editing, full-width-template, style-variations, template-editing, translation-ready, e-commerce
 Requires at least: 6.0
-Tested up to: 6.2
-Stable tag: 1.0.8
+Tested up to: 6.5.2
+Stable tag: 1.0.9
 Requires PHP: 5.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -21,6 +21,12 @@ Demo: https://themehunk.com/Blur/
 
 
 == Changelog ==
+
+= 1.0.9 =
+* Fix: Header Footer in child theme issue resolved. 
+* Fix: Single Page issue resolved.
+* Fix: Theme option plugin thumbnail issue resolved.
+
 = 1.0.8 =
 * Fix: Option Panel Issue resolved.
 
@@ -53,8 +59,10 @@ Version 1.0.0
 
 == Upgrade Notice ==
 
-= 1.0.7 =
-* register_rest_route error resolved.
+= 1.0.9 =
+* Fix: Header Footer in child theme issue resolved. 
+* Fix: Single Page issue resolved.
+* Fix: Theme option plugin thumbnail issue resolved.
 
 
 == Resources ==
