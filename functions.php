@@ -37,7 +37,7 @@ if ( ! function_exists( 'blur_support' ) ) :
 		add_theme_support( 'experimental-link-color' );
 
 		//define
-		define( 'BLUR_VERSION', '1.0.0' );
+		define( 'BLUR_VERSION', '1.1.1' );
 	    define( 'BLUR_DEBUG', defined( 'WP_DEBUG' ) && WP_DEBUG === true );
 	    define( 'BLUR_DIR', trailingslashit( get_template_directory() ) );
 	    define( 'BLUR_URL', trailingslashit( get_template_directory_uri() ) );
