@@ -58,7 +58,7 @@ class Block_Patterns {
 	private function setup_properties() {
 
 		$categories = array(
-			'blur' => array( 'label' => __( 'Blur Patterns', 'blur' ) ),
+			'blur' => array( 'label' => 'Blur Patterns' ),
 		);
 
 		$patterns = array(

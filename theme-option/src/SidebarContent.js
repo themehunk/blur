@@ -18,12 +18,6 @@ const SidebarContent = () => {
                </div>
                <hr></hr>
                <div className="content-box">
-                <h3> {__( 'Video Tutorials', 'blur' )}</h3>
-                <p>{__( 'Want a guide? We have video tutorials to walk you through getting started.', 'blur' )}</p>
-                <a href="https://www.youtube.com/@ThemeHunk/featured" className="content-link" target="_blank"> {__( 'Watch Videos', 'blur' )}</a>
-               </div>
-               <hr></hr>
-               <div className="content-box">
                 <h3> {__( 'Support', 'blur' )}</h3>
                 <p>{__( 'Have a question, we are happy to help! Get in touch with our support team.', 'blur' )}</p>
                 <a href="https://themehunk.com/contact-us/" className="content-link" target="_blank"> {__( 'Submit a Ticket', 'blur' )}</a>
