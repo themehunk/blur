@@ -2,7 +2,7 @@
 Contributors: themehunk
 Tags: grid-layout, one-column, wide-blocks, block-patterns, block-styles, custom-menu, editor-style, full-site-editing, full-width-template, style-variations, template-editing, translation-ready, e-commerce
 Requires at least: 6.0
-Tested up to: 6.8
+Tested up to: 7.1
 Stable tag: 1.1.1
 Requires PHP: 5.6
 License: GPLv3 or later
@@ -23,7 +23,9 @@ Demo: https://themehunk.com/Blur/
 == Changelog ==
 
 = 1.1.1 =
-* Update : Tested with WordPress 6.8.
+* Update: Tested with WordPress 7.1.
+* Update: Style Improved.
+* Update: Menu Improved.
 
 = 1.1.0 =
 * Update : Flexible width support integrated in default page template and in single post template.
