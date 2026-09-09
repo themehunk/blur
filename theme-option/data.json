@@ -6,6 +6,13 @@
     "init": "vayu-blocks",
     "proInit":""
   },
+  "th-store-one": {
+    "name": "TH Store One",
+    "imgUrl": "https://ps.w.org/th-store-one/assets/icon-128x128.png",
+    "link": "",
+    "init": "th-store-one",
+    "proInit":"th-store-one-pro/th-store-one-pro"
+  },
   "th-advance-product-search": {
     "name": "Th Advance Product Search",
     "imgUrl": "https://ps.w.org/th-advance-product-search/assets/icon-128x128.gif",
@@ -29,7 +36,7 @@
   },
   "lead-form-builder": {
     "name": "Lead Form Builder",
-    "imgUrl": "https://ps.w.org/lead-form-builder/assets/icon-128x128.png",
+    "imgUrl": "https://ps.w.org/lead-form-builder/assets/icon-128x128.gif",
     "link": "https://themehunk.com/lead-form-builder/",
     "init": "lead-form-builder",
     "proInit":"lead-form-builder-pro/lead-form-builder-pro"
@@ -43,7 +50,7 @@
   },
   "woocommerce": {
     "name": "Woocommerce",
-    "imgUrl": "https://ps.w.org/woocommerce/assets/icon-128x128.gif",
+    "imgUrl": "https://ps.w.org/woocommerce/assets/icon-128x128.png",
     "link": "",
     "init": "woocommerce",
     "proInit":""

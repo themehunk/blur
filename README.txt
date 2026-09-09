@@ -26,6 +26,7 @@ Demo: https://themehunk.com/Blur/
 * Update: Tested with WordPress 7.1.
 * Update: Style Improved.
 * Update: Menu Improved.
+* Update: Theme Option panel issue resolved.
 
 = 1.1.0 =
 * Update : Flexible width support integrated in default page template and in single post template.
